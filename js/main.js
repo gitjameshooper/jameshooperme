@@ -24,6 +24,22 @@ $(function(){
           this.remove();
         }
     });
+  var ResumeView = Backbone.View.extend({
+        tagName: 'article',
+        id: 'resume',
+        initialize: function() {
+          $(".video-overlay.darker").fadeIn(2000);
+          $("section").html(this.el).hide().fadeIn(2000);
+          this.render();
+        },
+        render: function() {
+          var template = _.template($('#resume-template').html());
+          this.$el.html(template);
+        },
+        close: function(){
+          this.remove();
+        }
+    });
   var PortfolioView = Backbone.View.extend({
         tagName: 'article',
         id: 'portfolio',
@@ -54,6 +70,33 @@ $(function(){
         },
         close: function(){
           this.remove();
+        },
+        events: {
+          'click #email-btn': 'sendEmail'
+        },
+        sendEmail: function(){
+          $("#contact-form").submit(function(e){
+            return false;
+          });
+       
+          $.ajax({
+            type: "POST",
+            url: "email.php",
+            data: $('#contact-form').serialize(),
+            success: function(){
+              $('#form-name').val('');
+              $('#form-email').val('');
+              $('#form-text').val('');
+              $('.success').fadeIn(2000 , function(){
+              $('.success').fadeOut(4000);
+              }); 
+            },
+            error: function(){
+              $('.no-success').fadeIn(2000 , function(){
+                   $('.no-success').fadeOut(4000);
+              }); 
+            }
+          });
         }
     });
 
@@ -61,6 +104,7 @@ $(function(){
         routes: {
             "home": "homeRoute",
             "about": "aboutRoute",
+            "resume": "resumeRoute",
             "portfolio": "portfolioRoute",
             "contact": "contactRoute",
             "*actions": "homeRoute",
@@ -70,6 +114,9 @@ $(function(){
         },
         aboutRoute : function() {
           this.loadView(new AboutView());
+        },
+        resumeRoute : function() {
+          this.loadView(new ResumeView());
         },
         portfolioRoute : function() {
           this.loadView(new PortfolioView());
@@ -85,9 +132,10 @@ $(function(){
     });
      
     var pageRouter = new PageRouter;
-
-    
  
     Backbone.history.start();
+
+ 
  
 });
+

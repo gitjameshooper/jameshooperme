@@ -23,6 +23,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
+	font-size: 10px;
     line-height: 1;
 }
 ol, ul {
@@ -43,25 +44,38 @@ table {
 }
 
 /* Custom Css */
-html{
-	color: #fff;
+html, body{
+	color: #dde7df;
 	font-family: 'Open Sans', sans-serif;
- 
+	height: 100%;
+	background: #191616;
+	min-height: 400px;
+	 
 }
 
  
 
 h1{
+	font-size: 4.2em;
 	font-weight: 700;
 }
+h2{
+	font-size: 3.2em;
+	font-weight: 700;
+}
+h3.tagline{
+	font-size: 1.6em;
+}
+ 
 a{
-	color: #fff;
+	color: #dde7df;
 }
 ul{
 	position: absolute;
-	right: 150px;
-	top: 30px;
-	width: 22%;
+	right: 5%;
+	top: 40%;
+	width: 360px;
+	font-size: 1.6em;
 }
 ul li{
 	float: left;
@@ -74,16 +88,24 @@ ul a{
 
 header {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	width: 100%;
+	height: 25%;
 	background: url('img/header-bg.png') no-repeat;
 	background-size: contain;
 	background-position: top right;
-	height: 100%;
- 
+}
+.headline{
+	position: absolute;
+	top: 20%;
+	left: 5%;
 }
 
-  
+.video-wrapper{
+	position: relative;
+	max-height: 100%;
+	overflow: hidden;
+}
 footer{
 	position: absolute;
 	bottom: 0;
@@ -94,13 +116,24 @@ footer{
 	background-position: bottom left;
 	height: 100%;
 }
+footer p{
+	position: absolute;
+	bottom: 30px;
+	font-size: 1.6em;
+	left: 20px;
+}
 section{
 	position: absolute;
-	z-index: 2;
-	background: #000;
-	width: 50%;
-	right: 0;
-	top: 50%;
+z-index: 3;
+width: 60%;
+right: 0;
+top: 15%;
+}
+section p{
+	font-size: 1.6em;
+}
+.wrapper{
+	margin-top: 5%;
 }
 .video-overlay{
 	width: 100%;
@@ -121,23 +154,67 @@ section{
 .rotate {
 
 /* Safari */
--webkit-transform: rotate(7deg);
+-webkit-transform: rotate(8deg);
 
 /* Firefox */
--moz-transform: rotate(7deg);
+-moz-transform: rotate(8deg);
 
 /* IE */
--ms-transform: rotate(7deg);
+-ms-transform: rotate(8deg);
 
 /* Opera */
--o-transform: rotate(7deg);
+-o-transform: rotate(8deg);
 
 /* Internet Explorer */
--ms-transform: rotate(7deg);
+-ms-transform: rotate(8deg);
 
 }
- 
-video{
-	margin-top: -10%;
+
+
+/* Contact */
+.info{
+	float: left;
+}
+form{
+	float: left;
+}
+form input[type="text"], form textarea{
+	resize: none;
+	background: #333 !important;
+	background-color: #333 !important;
+	border-color: #333 !important;
+	color: #dde7df;
+	padding: 5px;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+background: #333 !important;
+	background-color: #333 !important;
+	border-color: #333 !important;
+	}
+input[type="text"] {
+	float: left;
+	clear: both;
+}
+textarea{
+	float: left;
+}
+.email-msg{
+	display: none;
+}
+#email-btn{
+	clear: both;
+	display: block;
+	float: right;
+	margin-top: 15px;
+	background: #0c0d0d;
+	cursor: pointer;
+	font-size: 16px;
+	width: 150px;
+	text-transform: uppercase;
+	-webkit-transition: border linear .2s, box-shadow linear .2s;
+	-moz-transition: border linear .2s, box-shadow linear .2s;
+	-o-transition: border linear .2s, box-shadow linear .2s;
+	transition: border linear .2s, box-shadow linear .2s;
+	margin: 0px 0px 20px 0px;
 }
  

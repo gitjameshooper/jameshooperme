@@ -8,37 +8,43 @@
     <meta name="viewport" content="width=device-width"/>
     <base target="_blank" />
     <title>Jim Hooper</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
    	<link rel="stylesheet" href="main.css" />
   </head>
   <body>
   	<header>
-      <h1>JIM HOOPER</h1>
-      <span class="tagline">Developer Designer Entrepreneur</span>
+      <div class="headline">
+        <h1>JIM HOOPER</h1>
+        <h3 class="tagline">Developer Designer Entrepreneur</h3>
+      </div>
   		<ul class="rotate">
   			<li><a target="_self" href="#home">Home</a></li>
   			<li><a target="_self" href="#about">About</a></li>
+        <li><a target="_self" href="#resume">Resume</a></li>
   			<li><a target="_self" href="#portfolio">Portfolio</a></li>
   			<li><a target="_self" href="#contact">Contact</a></li>
   		</ul>
   	</header>
-    <footer>
-    </footer>
-  	<section>
-	   
-	  
-	</section>
-  	<div class="video-overlay"></div>
-    <div class="video-overlay darker"></div>
-    <div class="video-overlay darker next"></div>
-	 <video width="100%"
-	    height="100%"
-	    src="img/austin2.mp4"
-	    poster="img/dot.png"
-	    autoplay
-	    loop>
-	     Sorry, Please Update your Browser!
-	 </video>
+    <section>
+	  </section>
+    <div class="video-wrapper">
+     <div class="video-overlay"></div>
+     <div class="video-overlay darker"></div>
+     <div class="video-overlay darker next"></div>
+  	 <video width="100%"
+  	    height="100%"
+  	    src="img/austin2.mp4"
+  	    poster="img/dot.png"
+  	    autoplay
+  	    loop>
+  	     Sorry, Please Update your Browser!
+  	 </video>
+     <footer>
+      <p>Copyright © 2015 Jim Hooper. All rights reserved.</p>
+     </footer>
+    </div><!-- Video-wrapper -->
   
     
 
@@ -47,20 +53,61 @@
   
   <script type="text/template" id="about-template">
  
-    <h1>About</h1>
-    <p>In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout. It also reduces the need for the designer to come up with meaningful text, as they can instead use hastily generated lorem ipsum text.</p>
+    <h2>About</h2>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+    <p>Hello, I am a web developer with a solid background in design, layout, and building websites. Currently located in Austin, TX I am available for work.</p>
+  
+  </script>
+
+  <script type="text/template" id="resume-template">
+ 
+    <h2>Resume</h2>
   
   </script>
 
   <script type="text/template" id="portfolio-template">
  
-    <h1>Portfolio</h1>
+    <h2>Portfolio</h2>
   
   </script>
 
   <script type="text/template" id="contact-template">
  
-    <h1>Contact</h1>
+      <h2>Contact</h2>
+      <div class="wrapper">
+        <div class="info">
+               
+              <h4>Location:</h4>
+              <p>Austin, TX 78744</p> 
+              <h4>Phone:</h4>
+              <p>512-769-0980</p>
+              <h4>Email:</h4>  
+              <p>jim@jimhooper.me</p>
+        </div>
+        <form action="" method="post" id="contact-form">
+          <h4>Email Me</h4>
+           <input id="form-name" placeholder="Name" type="text" maxlength="20" name="name" tabindex="1" /> 
+           <textarea id="form-text" placeholder="Message" name="comment" tabindex="3"></textarea>
+           <input id="form-email" placeholder="Email" type="text" maxlength="30" name="email" tabindex="2" /> 
+           
+           <input id="email-btn"  type="submit"  name="submit" tabindex="4" value="Send Email" /> 
+        </form>
+        <p class="email-msg success">Thank You!<br />Your Email Has Been Sent.</p>
+        <p class="email-msg no-success">Sorry, Your Email Was NOT Sent.<br /> Please Try Again Later.</p>
+      </div>
+ 
+ 
+
   
   </script>
 
