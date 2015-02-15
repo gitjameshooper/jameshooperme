@@ -4,6 +4,7 @@ $(function(){
         id: 'home',
         initialize: function() {
           $("section").html('');
+          $(".video-overlay.darker").fadeOut(2000);
            
         } 
     });
@@ -11,11 +12,13 @@ $(function(){
         tagName: 'article',
         id: 'about',
         initialize: function() {
-          $("section").html(this.el).hide().fadeIn(3000);
+          $(".video-overlay.darker").fadeIn(2000);
+          $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
         render: function() {
-          this.$el.html("<h1>This is the about page</h1>");
+          var template = _.template($('#about-template').html());
+          this.$el.html(template);
         },
         close: function(){
           this.remove();
@@ -25,11 +28,13 @@ $(function(){
         tagName: 'article',
         id: 'portfolio',
         initialize: function() {
-          $("section").html(this.el).hide().fadeIn(3000);
+          $(".video-overlay.darker").fadeIn(2000);
+          $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
         render: function() {
-          this.$el.html("<h1>This is the portfolio page</h1>");
+          var template = _.template($('#portfolio-template').html());
+          this.$el.html(template);
         },
         close: function(){
           this.remove();
@@ -39,11 +44,13 @@ $(function(){
         tagName: 'article',
         id: 'contact',
         initialize: function() {
-          $("section").html(this.el).hide().fadeIn(3000);
+          $(".video-overlay.darker").fadeIn(2000);
+          $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
         render: function() {
-          this.$el.html("<h1>This is the contact page</h1>");
+          var template = _.template($('#contact-template').html());
+          this.$el.html(template);
         },
         close: function(){
           this.remove();

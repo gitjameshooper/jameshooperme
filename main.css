@@ -43,55 +43,97 @@ table {
 }
 
 /* Custom Css */
+html{
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+ 
+}
+
+ 
+
+h1{
+	font-weight: 700;
+}
+a{
+	color: #fff;
+}
+ul{
+	position: absolute;
+	right: 150px;
+	top: 30px;
+	width: 22%;
+}
+ul li{
+	float: left;
+	display: inline-block;
+	padding: 5px 8px;
+}
+ul a{
+	text-decoration: none;
+}
 
 header {
 	position: absolute;
 	z-index: 2;
 	width: 100%;
+	background: url('img/header-bg.png') no-repeat;
+	background-size: contain;
+	background-position: top right;
+	height: 100%;
+ 
 }
+
+  
 footer{
 	position: absolute;
+	bottom: 0;
 	z-index: 2;
 	width: 100%;
+	background: url('img/footer-bg.png') no-repeat;
+	background-size: contain;
+	background-position: bottom left;
+	height: 100%;
 }
 section{
 	position: absolute;
 	z-index: 2;
-	background: #fff;
+	background: #000;
 	width: 50%;
 	right: 0;
 	top: 50%;
 }
-.overlay{
+.video-overlay{
 	width: 100%;
 	height: 100%;
-	background: url('dot.png') repeat;
+	background: url('img/dot.png') repeat;
 	position: absolute;
 	z-index: 1;
 }
+.video-overlay.darker{
+	display: none;
+	background-position: 0px -2px;
+}
+.video-overlay.darker.next{
+	 
+	background-position: 2px -2px;
+}
  
 .rotate {
-	color: #fff;
-position: absolute;
-top: -50px;
-right: 100px;
-z-index: 3;
-width: 300px;
 
 /* Safari */
--webkit-transform: rotate(6deg);
+-webkit-transform: rotate(7deg);
 
 /* Firefox */
--moz-transform: rotate(6deg);
+-moz-transform: rotate(7deg);
 
 /* IE */
--ms-transform: rotate(6deg);
+-ms-transform: rotate(7deg);
 
 /* Opera */
--o-transform: rotate(6deg);
+-o-transform: rotate(7deg);
 
 /* Internet Explorer */
--ms-transform: rotate(6deg);
+-ms-transform: rotate(7deg);
 
 }
  
