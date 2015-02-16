@@ -37,6 +37,13 @@ $(function(){
           var template = _.template($('#portfolio-template').html());
           this.$el.html(template);
         },
+        events:{
+            "click .website-list li": "getMedia"
+        },
+        getMedia: function(e){
+
+             new MediaView({ collection: albumCollection, sid: e.currentTarget.id });
+        },
         close: function(){
           this.remove();
         }
@@ -84,6 +91,46 @@ $(function(){
           });
         }
     });
+   
+  var MediaView = Backbone.View.extend({
+          tagName: 'div',
+          id: 'media',
+           
+          initialize: function(){
+             
+              this.render();
+          },
+
+          render: function(){
+           
+            $('.viewport').append(this.$el);
+            window.console.log(this.collection);
+
+              
+          }
+  });
+ 
+  var MediaModel = Backbone.Model.extend({
+          defaults :{
+            "id": "",
+            "imgSrc": "",
+            "url": ""
+          },
+          initialize: function(){
+             
+          }
+  });
+
+  var MediaCollection = Backbone.Collection.extend({
+        model: MediaModel
+    });
+
+    var song1 = new MediaModel({ id: "wafresh", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
+    var song2 = new MediaModel({ id: "wajim", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
+    var song3 = new MediaModel({ id: "wafsh", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
+    var albumCollection = new MediaCollection([ song1, song2, song3]);
+    
+     
 
   var PageRouter = Backbone.Router.extend({
         routes: {
@@ -101,6 +148,7 @@ $(function(){
         },
         portfolioRoute : function() {
           this.loadView(new PortfolioView());
+          
         },
         contactRoute : function() {
           this.loadView(new ContactView());
