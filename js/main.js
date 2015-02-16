@@ -24,22 +24,7 @@ $(function(){
           this.remove();
         }
     });
-  var ResumeView = Backbone.View.extend({
-        tagName: 'article',
-        id: 'resume',
-        initialize: function() {
-          $(".video-overlay.darker").fadeIn(2000);
-          $("section").html(this.el).hide().fadeIn(2000);
-          this.render();
-        },
-        render: function() {
-          var template = _.template($('#resume-template').html());
-          this.$el.html(template);
-        },
-        close: function(){
-          this.remove();
-        }
-    });
+   
   var PortfolioView = Backbone.View.extend({
         tagName: 'article',
         id: 'portfolio',
@@ -104,7 +89,6 @@ $(function(){
         routes: {
             "home": "homeRoute",
             "about": "aboutRoute",
-            "resume": "resumeRoute",
             "portfolio": "portfolioRoute",
             "contact": "contactRoute",
             "*actions": "homeRoute",
@@ -114,9 +98,6 @@ $(function(){
         },
         aboutRoute : function() {
           this.loadView(new AboutView());
-        },
-        resumeRoute : function() {
-          this.loadView(new ResumeView());
         },
         portfolioRoute : function() {
           this.loadView(new PortfolioView());

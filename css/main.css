@@ -1,0 +1,246 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+	font-size: 10px;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom Css */
+html, body{
+	color: #dde7df;
+	 
+	
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	height: 100%;
+	background: #191616;
+	min-height: 400px;
+
+	 
+}
+
+ 
+
+h1{
+	font-size: 4.2em;
+	font-weight: 700;
+	font-family: 'Merriweather', serif;
+}
+h2{
+	font-size: 3.2em;
+	font-weight: 700;
+}
+h3.tagline{
+	font-size: 1.6em;
+	letter-spacing: 3.5px;
+	margin-top: 8px;
+}
+ 
+a{
+	color: #dde7df;
+}
+ul.nav{
+
+	position: absolute;
+	right: 5%;
+	top: 40%;
+	width: 430px;
+	font-size: 2em;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+ul.nav li{
+	float: left;
+	display: inline-block;
+	padding: 5px 8px;
+}
+ul a{
+	text-decoration: none;
+}
+
+header {
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	height: 25%;
+	background: url('../img/header-bg.png') no-repeat;
+	background-size: contain;
+	background-position: top right;
+}
+.headline{
+	position: absolute;
+	top: 22%;
+	left: 4%;
+}
+
+.video-wrapper{
+	position: relative;
+	max-height: 100%;
+	overflow: hidden;
+}
+footer{
+
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	width: 100%;
+	background: url('../img/footer-bg.png') no-repeat;
+	background-size: contain;
+	background-position: bottom left;
+	height: 100%;
+}
+footer p{
+	font-family: 'Merriweather', serif;
+	position: absolute;
+	bottom: 30px;
+	font-size: 1.2em;
+	left: 20px;
+}
+footer ul.icons{
+	position: absolute;
+	bottom: 60px;
+	font-size: 2.2em;
+	left: 10px;
+	width: 300px;
+}
+footer ul.icons li{
+	float: left;
+display: inline-block;
+padding: 5px 10px;
+}
+section{
+	position: absolute;
+z-index: 3;
+width: 60%;
+right: 0;
+top: 15%;
+}
+section p{
+	font-size: 1.6em;
+}
+.wrapper{
+	margin-top: 5%;
+}
+video{
+	margin-top: -5%;
+}
+.video-overlay{
+	width: 100%;
+	height: 100%;
+	background: url('../img/dot.png') repeat;
+	position: absolute;
+	z-index: 1;
+}
+.video-overlay.darker{
+	display: none;
+	background-position: 0px -2px;
+}
+.video-overlay.darker.next{
+	 
+	background-position: 2px -2px;
+}
+ 
+.rotate {
+
+/* Safari */
+-webkit-transform: rotate(8deg);
+
+/* Firefox */
+-moz-transform: rotate(8deg);
+
+/* IE */
+-ms-transform: rotate(8deg);
+
+/* Opera */
+-o-transform: rotate(8deg);
+
+/* Internet Explorer */
+-ms-transform: rotate(8deg);
+
+}
+
+
+/* Contact */
+.info{
+	float: left;
+}
+form{
+	float: left;
+}
+form input[type="text"], form textarea{
+	resize: none;
+	background: #333 !important;
+	background-color: #333 !important;
+	border-color: #333 !important;
+	color: #dde7df;
+	padding: 5px;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+background: #333 !important;
+	background-color: #333 !important;
+	border-color: #333 !important;
+	}
+input[type="text"] {
+	float: left;
+	clear: both;
+}
+textarea{
+	float: left;
+}
+.email-msg{
+	display: none;
+}
+#email-btn{
+	clear: both;
+	display: block;
+	float: right;
+	margin-top: 15px;
+	background: #0c0d0d;
+	cursor: pointer;
+	font-size: 16px;
+	width: 150px;
+	text-transform: uppercase;
+	-webkit-transition: border linear .2s, box-shadow linear .2s;
+	-moz-transition: border linear .2s, box-shadow linear .2s;
+	-o-transition: border linear .2s, box-shadow linear .2s;
+	transition: border linear .2s, box-shadow linear .2s;
+	margin: 0px 0px 20px 0px;
+}
+ 
