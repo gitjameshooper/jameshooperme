@@ -46,7 +46,7 @@ table {
 /* Custom Css */
 html, body{
 	color: #dde7df;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Merriweather', serif;
 	height: 100%;
 	background: #191616;
 	min-height: 400px;
@@ -59,14 +59,17 @@ html, body{
 h1{
 	font-size: 4.2em;
 	font-weight: 700;
-	font-family: 'Merriweather', serif;
 	text-shadow: 2px 2px 2px #000;
 }
 h2{
 	font-size: 3.2em;
 	font-weight: 700;
+	text-transform: uppercase;
+letter-spacing: 3px;
+
 }
 h3.tagline{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 1.6em;
 	letter-spacing: 3.5px;
 	margin-top: 8px;
@@ -92,6 +95,7 @@ ul.nav li{
 	padding: 5px 8px;
 }
 ul a{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 	text-decoration: none;
 	display: block;
 position: relative;
@@ -99,63 +103,64 @@ padding: 0 2px;
  
 }
 .roll-link {
-display: inline-block;
-overflow: hidden;
--webkit-perspective: 900px;
--moz-perspective: 900px;
--ms-perspective: 900px;
-perspective: 900px;
--webkit-perspective-origin: 50% 50%;
--moz-perspective-origin: 50% 50%;
--ms-perspective-origin: 50% 50%;
-perspective-origin: 50% 50%;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-perspective: 900px;
+	-moz-perspective: 900px;
+	-ms-perspective: 900px;
+	perspective: 900px;
+	-webkit-perspective-origin: 50% 50%;
+	-moz-perspective-origin: 50% 50%;
+	-ms-perspective-origin: 50% 50%;
+	perspective-origin: 50% 50%;
 }
 
 .roll-link a {
-display: block;
-position: relative;
-padding: 0 2px;
--webkit-transition: all 400ms ease;
--moz-transition: all 400ms ease;
--ms-transition: all 400ms ease;
-transition: all 400ms ease;
--webkit-transform-origin: 50% 0%;
--moz-transform-origin: 50% 0%;
--ms-transform-origin: 50% 0%;
-transform-origin: 50% 0%;
--webkit-transform-style: preserve-3d;
--moz-transform-style: preserve-3d;
--ms-transform-style: preserve-3d;
-transform-style: preserve-3d;
+	display: block;
+	position: relative;
+	padding: 0 2px;
+	text-shadow: 2px 2px 5px #000;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	transition: all 400ms ease;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .roll-link a:after {
-content:  "[" attr(title) "]";
-display: block;
-position: absolute;
-left: 0;
-top: 0;
-padding: 0 2px;
+	content:  "[" attr(title) "]";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0 2px;
 
--webkit-transform-origin: 50% 0%;
--moz-transform-origin: 50% 0%;
--ms-transform-origin: 50% 0%;
-transform-origin: 50% 0%;
+	-webkit-transform-origin: 50% 0%;
+	-moz-transform-origin: 50% 0%;
+	-ms-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
 
--webkit-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
--moz-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
--ms-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+	-webkit-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+	-moz-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+	-ms-transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+	transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
 
 }
 
 .roll-link:hover a {
 
-color:#fff;
--webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
--moz-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
--ms-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	color:#fff;
+	-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+	-moz-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
+	-ms-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
+	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 }
 
  
@@ -187,12 +192,14 @@ section{
 }
 section p{
 	font-size: 1.6em;
+	letter-spacing: 1px;
+	line-height: 1.2;
 }
 .wrapper{
 	margin-top: 5%;
 }
 
-
+ 
 
 /* Footer */
 footer{
@@ -207,17 +214,17 @@ footer{
 	height: 100%;
 }
 footer p{
-	font-family: 'Merriweather', serif;
 	position: absolute;
 	bottom: 30px;
 	font-size: 1.2em;
 	color: #666;
 	left: 20px;
+	text-shadow: 2px 2px 5px #000;
 }
 footer ul.icons{
 	position: absolute;
 	bottom: 60px;
-	font-size: 2.2em;
+	font-size: 1.2em;
 	left: 10px;
 	width: 300px;
 }
@@ -229,23 +236,20 @@ footer ul.icons li{
 }
 footer ul a{
 	text-decoration: none;
-display: block;
-position: relative;
-width: 30px;
-padding: 0;
+	display: block;
+	position: relative;
+	width: 30px;
+	padding: 0;
 
 }
  
- 
- 
- 
+  
 footer ul a i.fa {
 
 	vertical-align: middle;
 	display: block;
 	color: #181818;
 	background: #666;
-	font-size: 1em;
 	padding: 4px;
 	 
 	text-align: center;
@@ -308,39 +312,111 @@ video{
 }
  
 
+/* About */
 
+.my-pic{
+	width: 30%;
+	float: left;
+margin-right: 20px;
+}
+ 
 
-/* Portfolio */
+/* Portfolio  
 
 .viewport{
-	float: left;
-	width: 50%;
-	height: 300px;
+	 position: relative;
+background-color: black;
+border-radius: 50%;
+height: 1400px;
+width: 1400px;
+margin-left: -400px;
+margin-top: 200px;
+right: -50%;
+}
+.viewport img{
+	width: 200px;
+position: absolute;
+opacity: .5;
+}
+.viewport #img1{
+	transform: rotate(-44deg);
+top: 128px;
+left: 75px;
+}
+.viewport #img2{
+	transform: rotate(-29deg);
+left: 250px;
+top: -2px;
+}
+.viewport #img3{
+	transform: rotate(-61deg);
+top: 301px;
+left: -57px;
 }
 
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 15s linear infinite;
+}
+*/
+
+.viewport{
+	position: relative;
+transform: rotate(-45deg);
+width: 800px;
+}
+.port-2{
+	position: relative;
+ left: 60px;
+}
+.port-3{
+	position: relative;
+ left: 120px;
+}
+.viewport img{
+	width: 200px;
+	margin: 0 10px;
+ 
+opacity: .5;
+}
+.viewport img:hover{
+opacity: 1;
+cursor: pointer;
+	}
 .website-list{
 	font-size: 1.6em;
 }
 
 /* Contact */
-.info{
+.info-box{
 	float: left;
+	width: 50%;
 }
-form{
+#contact-form{
 	float: left;
+	width: 50%;
 }
+ 
 form input[type="text"], form textarea{
 	resize: none;
 	background: #333 !important;
 	background-color: #333 !important;
-	border-color: #333 !important;
+	border: none !important;
 	color: #dde7df;
 	padding: 5px;
 }
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-background: #333 !important;
+	background: #333 !important;
 	background-color: #333 !important;
-	border-color: #333 !important;
+	border: none !important;
 	}
 input[type="text"] {
 	float: left;
@@ -357,9 +433,9 @@ textarea{
 	display: block;
 	float: right;
 	margin-top: 15px;
-	background: #0c0d0d;
+	background: transparent;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 1.4em;
 	width: 150px;
 	text-transform: uppercase;
 	-webkit-transition: border linear .2s, box-shadow linear .2s;
@@ -367,6 +443,8 @@ textarea{
 	-o-transition: border linear .2s, box-shadow linear .2s;
 	transition: border linear .2s, box-shadow linear .2s;
 	margin: 0px 0px 20px 0px;
+	color: #fff;
+	border: 2px solid #fff
 }
 
 .rotate {

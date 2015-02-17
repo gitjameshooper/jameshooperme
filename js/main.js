@@ -165,6 +165,32 @@ $(function(){
     Backbone.history.start();
 
  
- 
+    
+
+     
+    
+  var hoverInterval;
+
+    function doStuff() {
+        
+        $(".viewport").animate({ left: "+=500px", bottom: "+=500px"}, 10000);
+    }
+
+    
+        $(".viewport").hover(
+            function() {
+                // call doStuff every 100 milliseconds
+                hoverInterval = setInterval(doStuff, 1000);
+            },
+            function() {
+                // stop calling doStuff
+                clearInterval(hoverInterval);
+            }
+        );
+    
+  
 });
+
+ 
+
 
