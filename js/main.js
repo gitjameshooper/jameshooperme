@@ -1,4 +1,32 @@
-$(function(){
+require({
+    paths: {
+        templates:      '../templates',
+        Handlebars:     'handlebars',
+        text:           'text',
+        hbars:          'hbars'
+    },
+    shim: {
+        Handlebars: {
+            exports: 'Handlebars'
+        }
+    },
+
+    onBuildWrite : function(moduleName, path, content){
+
+        // replace handlebars with the runtime version
+        if (moduleName === 'Handlebars') {
+            path = path.replace('handlebars.js','handlebars.runtime.js');
+            content = fs.readFileSync(path).toString();
+            content = content.replace(/(define\()(function)/, '$1"handlebars", $2');
+        }
+        return content;
+    }
+
+},['jquery',"underscore", "backbone","modernizer", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact"], 
+  function($, _, Backbone, Modernizer, aboutTemp, portfolioTemp, contactTemp)
+{
+
+   
   var HomeView = Backbone.View.extend({
         tagName: 'article',
         id: 'home',
@@ -17,8 +45,7 @@ $(function(){
           this.render();
         },
         render: function() {
-          var template = _.template($('#about-template').html());
-          this.$el.html(template);
+          this.$el.html(aboutTemp);
         },
         close: function(){
           this.remove();
@@ -34,8 +61,8 @@ $(function(){
           this.render();
         },
         render: function() {
-          var template = _.template($('#portfolio-template').html());
-          this.$el.html(template);
+          this.$el.html(portfolioTemp);
+ 
         },
         events:{
             "click .website-list li": "getMedia"
@@ -57,8 +84,7 @@ $(function(){
           this.render();
         },
         render: function() {
-          var template = _.template($('#contact-template').html());
-          this.$el.html(template);
+          this.$el.html(contactTemp);
         },
         close: function(){
           this.remove();

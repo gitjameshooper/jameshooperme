@@ -1,12 +1,12 @@
 <!doctype html>
-<!--[if IE 8]> <html class="no-js ie lt-ie10 lt-ie9" lang="en-us" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
-<!--[if IE 9]> <html class="no-js ie lt-ie10" lang="en-us" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js ie" lang="en-us" xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
+<!--[if IE 8]> <html class="no-js ie lt-ie10 lt-ie9" lang="en-us"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie lt-ie10" lang="en-us"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js ie" lang="en-us"> <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width"/>
-    <meta name="description" content="My name is Jim Hooper and this is my professional portfolio website. It includes my projects and resume that highlights my skill sets." />
+    <meta name="description" content="My name is Jim Hooper and this is my professional portfolio website. It includes my projects and resume that highlight my skill sets." />
     <meta name="keywords" content="web designer, website builder, web developer, austin website builder, austin web developer, small business websites, need a website" />
     <base target="_blank" />
     <title>Jim Hooper</title>
@@ -14,6 +14,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href='//fonts.googleapis.com/css?family=Merriweather|Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/randomcolor/0.1.1/randomColor.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.1/skeleton.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
    	<link rel="stylesheet" href="css/main.css" />
   </head>
@@ -56,98 +59,7 @@
     </div><!-- Video-wrapper -->
   
     
-
-
-  <!-- Templates -->
-  
-  <script type="text/template" id="about-template">
+  <script type="text/javascript" data-main="js/main" src="js/require.js"></script>
  
-    <h2>About</h2>
-    <div class="wrapper">
-    <img class="my-pic" src="img/me-2.png" />
-      <p>Austin-based web developer who strives to develop solid web experiences. Multi-dimensional person with an open mind to pursue creative web and business ideas.
-      </p>
-    </div>
-     
-    
-  
-  </script>
-
-   
-  <script type="text/template" id="portfolio-template">
- 
-    <h2>Portfolio</h2>
-    <div class="wrapper">
-    <div class="viewport rotating">  
-      <img id="img1" src="img/websites/dlprint.jpg" />
-      <img  id="img2"  src="img/websites/ahha.jpg" /> 
-      <img  id="img3" src="img/websites/english.jpg" /> 
-    </div>
-    <div class="viewport port-2 rotating">  
-      <img id="img1" src="img/websites/dlprint.jpg" />
-      <img  id="img2"  src="img/websites/ahha.jpg" /> 
-      <img  id="img3" src="img/websites/english.jpg" /> 
-    </div>
-    <div class="viewport port-3 rotating">  
-      <img id="img1" src="img/websites/dlprint.jpg" />
-      <img  id="img2"  src="img/websites/ahha.jpg" /> 
-      <img  id="img3" src="img/websites/english.jpg" /> 
-    </div>
-     <!--
-      <ul class="website-list">
-        <li class="active" id="wafresh">Wa Fresh</li>
-        <li id="greens">Greens Plus</li>
-        <li id="english">English Telephone Booths</li>
-        <li id="onestory">One Story Tall</li>
-        <li id="totelcom">Totelcom Communications</li>  
-        <li id="turtle">The Turtle Restaurant</li>
-        <li id="threeby">Three By Three</li>
-        <li id="holycross">Holy Cross Depot</li>
-        <li id="construction">Construction</li>
-        <li id="halosleep">Halo Sleep</li>
-        <li id="caravan">Caravan Collection</li>
-        <li id="desires">Desires Sex Shop</li>
-        <li id="dlprint">DL Print</li>
-        <li id="fbgfudge">FBG Fudge</li>
-        <li id="wildseed">Wildseed Farms</li>
-      </ul> -->
-    </div>
-  
-  </script>
-  
-  <script type="text/template" id="contact-template">
- 
-      <h2>Contact</h2>
-      <div class="wrapper">
-        <div class="info-box">
-               
-              <h4>Location</h4>
-              <p>Austin, TX 78744</p> 
-              <h4>Phone</h4>
-              <p>512-769-0980</p>
-              <h4>Email</h4>  
-              <p>jim@jimhooper.me</p>
-        </div>
-        <form action="" method="post" id="contact-form">
-          <h4>Email Me</h4>
-           <input id="form-name" placeholder="Name" type="text" maxlength="20" name="name" tabindex="1" /> 
-           <input id="form-email" placeholder="Email" type="text" maxlength="30" name="email" tabindex="2" />
-           <textarea id="form-text" placeholder="Message" name="comment" tabindex="3"></textarea> 
-           
-           <input id="email-btn"  type="submit"  name="submit" tabindex="4" value="Send Email" /> 
-        </form>
-        <p class="email-msg success">Thank You!<br />Your Email Has Been Sent.</p>
-        <p class="email-msg no-success">Sorry, Your Email Was NOT Sent.<br /> Please Try Again Later.</p>
-      </div>
- 
- 
-
-  
-  </script>
-  <script type="text/javascript" src="js/modernizer-2.8.3.js"></script>
-  <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-  <script type="text/javascript" src="js/underscore-1.6.0.js"></script>
-  <script type="text/javascript" src="js/backbone-1.1.2.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

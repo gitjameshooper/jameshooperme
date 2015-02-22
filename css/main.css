@@ -485,4 +485,32 @@ textarea{
 -ms-transform: rotate(8deg);
 
 }
+
+  section {
+        transform: translateZ(1000px);
+        -webkit-transform: translateZ(1000px);
+      }
+      #container {
+        width: 100%;
+        height: 80%;
+        margin: auto;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+      }
+      #surface {
+        width: 100%;
+        height: 80%;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+      }
+      .card {
+        position: absolute;
+        border-radius: 10%;
+        /* Fix jagged edges in firefox */
+        outline: 1px solid transparent;
+      }
+      #toolbar {
+        text-align: center;
+      }
+     
  
