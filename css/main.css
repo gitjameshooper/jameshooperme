@@ -52,8 +52,6 @@ html, body{
 	height: 100%;
 	background: #191616;
 	min-height: 400px;
-
-	 
 }
 
  
@@ -67,15 +65,21 @@ h2{
 	font-size: 3.2em;
 	font-weight: 700;
 	text-transform: uppercase;
-letter-spacing: 3px;
-text-shadow: 2px 2px 5px #000;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 5px #000;
 }
 h3.tagline{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 1.6em;
 	letter-spacing: 3.5px;
 	margin-top: 8px;
+	text-transform: uppercase;
 	text-shadow: 2px 2px 2px #000;
+}
+h3.tagline i{
+	font-size: .3em;
+	position: relative;
+	top: -3px;
 }
  
 a{
@@ -100,8 +104,8 @@ ul a{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	text-decoration: none;
 	display: block;
-position: relative;
-padding: 0 2px;
+	position: relative;
+	padding: 0 2px;
  
 }
 .roll-link {
@@ -201,7 +205,6 @@ section p{
 	margin-top: 5%;
 }
 
- 
 
 /* Footer */
 footer{
@@ -319,83 +322,17 @@ video{
 .my-pic{
 	width: 30%;
 	float: left;
-margin-right: 20px;
+	margin-right: 20px;
 }
  
 
-/* Portfolio  
-
-.viewport{
-	 position: relative;
-background-color: black;
-border-radius: 50%;
-height: 1400px;
-width: 1400px;
-margin-left: -400px;
-margin-top: 200px;
-right: -50%;
-}
-.viewport img{
-	width: 200px;
-position: absolute;
-opacity: .5;
-}
-.viewport #img1{
-	transform: rotate(-44deg);
-top: 128px;
-left: 75px;
-}
-.viewport #img2{
-	transform: rotate(-29deg);
-left: 250px;
-top: -2px;
-}
-.viewport #img3{
-	transform: rotate(-61deg);
-top: 301px;
-left: -57px;
+/* Portfolio  */
+.getModal{
+	background: #000;
+	color: #fff;
 }
 
-@-webkit-keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-.rotating {
-    -webkit-animation: rotating 15s linear infinite;
-}
-*/
-
-.viewport{
-	position: relative;
-transform: rotate(-45deg);
-width: 800px;
-}
-.port-2{
-	position: relative;
- left: 60px;
-}
-.port-3{
-	position: relative;
- left: 120px;
-}
-.viewport img{
-	width: 200px;
-	margin: 0 10px;
  
-opacity: .5;
-}
-.viewport img:hover{
-opacity: 1;
-cursor: pointer;
-	}
-.website-list{
-	font-size: 1.6em;
-}
 
 /* Contact */
 .info-box{
@@ -403,13 +340,13 @@ cursor: pointer;
 	width: 50%;
 }
 section #contact  h4{
-font-size: 1.8em;
-margin-bottom: 10px;
-text-shadow: 2px 2px 5px #000;
+	font-size: 1.8em;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 5px #000;
 }
 section .info-box p{
 	font-size: 1.5em;
-margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 #contact-form{
 	float: left;
@@ -427,7 +364,7 @@ form input[type="text"], form textarea{
 }
 form textarea{
 	width: 100%;
-height: 100px;
+	height: 100px;
 }
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	background: #333 !important;
@@ -486,31 +423,54 @@ textarea{
 
 }
 
-  section {
-        transform: translateZ(1000px);
-        -webkit-transform: translateZ(1000px);
-      }
-      #container {
-        width: 100%;
-        height: 80%;
-        margin: auto;
-        transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
-      }
-      #surface {
-        width: 100%;
-        height: 80%;
-        transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
-      }
-      .card {
-        position: absolute;
-        border-radius: 10%;
-        /* Fix jagged edges in firefox */
-        outline: 1px solid transparent;
-      }
-      #toolbar {
-        text-align: center;
-      }
-     
+/* Modal */
+ 
+#modal{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+	font-size: 2em;
+}
+ 
+.close-modal{
+	font-size: 2em;
+	position: absolute;
+	right: 50px;
+	top: 50px;
+	cursor: pointer;
+	z-index: 1;
+}
+#cylinder-container {
+	position: relative;
+	height: 100%;
+	transform: translateZ(1000px);
+	-webkit-transform: translateZ(1000px);
+	overflow: hidden;
+}
+ 
+#cylinder-wrapper{
+	width: 100%;
+	height: 80%;
+	margin: auto;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+#surface {
+	margin: auto;
+	width: 100%;
+	height: 80%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+.card {
+	position: absolute;
+	border-radius: 10%;
+	/* Fix jagged edges in firefox */
+	outline: 1px solid transparent;
+}
+    
  

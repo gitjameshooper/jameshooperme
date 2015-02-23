@@ -22,11 +22,10 @@ require({
         return content;
     }
 
-},['jquery',"underscore", "backbone","modernizer", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact"], 
-  function($, _, Backbone, Modernizer, aboutTemp, portfolioTemp, contactTemp)
+},['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact", "hbars!templates/modal"], 
+  function($, _, Backbone, Modernizer, Cards, aboutTemp, portfolioTemp, contactTemp, modalTemp)
 {
 
-   
   var HomeView = Backbone.View.extend({
         tagName: 'article',
         id: 'home',
@@ -65,11 +64,11 @@ require({
  
         },
         events:{
-            "click .website-list li": "getMedia"
+            "click button.getModal": "getModal"
         },
-        getMedia: function(e){
-
-             new MediaView({ collection: albumCollection, sid: e.currentTarget.id });
+        getModal: function(){
+             new ModalView();
+              
         },
         close: function(){
           this.remove();
@@ -89,8 +88,12 @@ require({
         close: function(){
           this.remove();
         },
-        events: {
-          'click #email-btn': 'sendEmail'
+        events:{
+            "click span.getModal": "getModal"
+        },
+        getModal: function(){
+             new ModalView();
+              
         },
         sendEmail: function(){
           $("#contact-form").submit(function(e){
@@ -117,6 +120,27 @@ require({
           });
         }
     });
+  var ModalView = Backbone.View.extend({
+          tagName: 'div',
+          id: 'modal',
+
+          initialize: function(){
+            this.render();
+          },
+          render: function(){
+             
+            $('body').prepend(this.$el.html(modalTemp));
+            var cards = new Cards;
+            cards.init();
+          },
+          events :{
+            "click .close-modal": "close"
+          },
+          close: function(){
+            this.remove();
+          }
+
+  });
    
   var MediaView = Backbone.View.extend({
           tagName: 'div',
