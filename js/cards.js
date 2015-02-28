@@ -1,29 +1,16 @@
 define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
 {
    
-   
   function Deck(cardData){
 
     this.cards = [];
     this.card_index = [];
     this.$container = $('#surface');
 
-    
     this.create_card = function(index){
-       
-      var card = document.createElement('div');
-      var imgEl = document.createElement('img');
-      var aHref = document.createElement('a');
-      card.className = 'card';
-      aHref.setAttribute('href',cardData.cards[index].link);
-      imgEl.setAttribute('src',cardData.cards[index].imgUrl);
-      aHref.appendChild(imgEl);
-      card.appendChild(aHref);
-        
-      this.$container.append(card);
-
-      return card;
-   
+      var $card = $('<div class="card"><a href="'+cardData.cards[index].link+'"><img src="'+cardData.cards[index].imgUrl+'"></a></div>');
+      this.$container.append($card);
+      return $card;
     }
     this.next_card = function() {
       if(this.card_index > 51)
@@ -39,7 +26,6 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
       this.card_index = 0;
     };
     for(var i=0;i<cardData.cards.length;++i) {
-      
       this.cards.push(this.create_card(i));
     }
     return this;
@@ -48,29 +34,28 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
  
   function CardViz(){
     this.Deck = new Deck(cardData);
+    this.$CONTAINER = $('#cylinder-wrapper');
+    this.$SURFACE = $('#surface');
     this.config = {
-        CARD_HEIGHT : 125,
+        CARD_HEIGHT : 120,
         CARD_WIDTH : 300,
         CARD_COUNT : cardData.cards.length,
-        WIDTH : 500,
-        HEIGHT : 500, 
+        WIDTH : this.$CONTAINER.width(),
+        HEIGHT : this.$CONTAINER.height() 
     }
-     
     return this;
   }
 
   CardViz.prototype.update_sizes = function() {
-        this.container = document.getElementById('cylinder-container');
-        this.config.WIDTH = this.container.clientWidth;
-        this.config.HEIGHT = this.container.clientHeight;
-        CARD_WIDTH = this.config.WIDTH * 0.10;
-        CARD_HEIGHT = this.config.HEIGHT * 0.15;
-         
         
-        for(var i=0;i<this.Deck.cards.length;++i) {
-          this.Deck.card_at(i).style.height = CARD_HEIGHT + 'px';
-          this.Deck.card_at(i).style.width = CARD_WIDTH + 'px';
-        }
+      CARD_WIDTH = this.config.WIDTH * 0.20;
+      CARD_HEIGHT = this.config.HEIGHT * 0.25;
+       
+      for(var i=0;i<this.Deck.cards.length;++i) {
+        
+        this.Deck.card_at(i).height(CARD_HEIGHT + 'px');
+        this.Deck.card_at(i).width(CARD_WIDTH + 'px');
+      }
   };
   
  
@@ -83,46 +68,29 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
         rotation: positions[i].rotation,
         easing: 'ease',
         delay: i * 75
-      });
+      }); 
     }
+     
   };
    
   CardViz.prototype.rotate_container = function() {
-    var container = document.getElementById('surface');
-    snabbt(container, {
+     
+    snabbt(this.$SURFACE, {
       rotation: [0, 2*Math.PI, 0],
       duration: 8000,
       perspective: 2000,
       loop: Infinity
     });
-    $('.card').hover(function(){
-      snabbt(container, 'stop');
-      snabbt(container, {
-        rotation: [0, 2*Math.PI, 0],
-        duration: 30000,
-        perspective: 2000,
-        loop: Infinity
-      });
-    },function(){
-       snabbt(container, 'stop');
-        snabbt(container, {
-          rotation: [0, 2*Math.PI, 0],
-          duration: 8000,
-          perspective: 2000,
-          loop: Infinity
-        });
-
+    this.$SURFACE.hover(function(){
+      snabbt(this.$SURFACE, 'stop');
     });
-     
-    
-     
   };
-   
+  
   CardViz.prototype.cylinder_positions = function() {
     var positions = [];
-    var start_x = this.config.WIDTH / 2.2;
+    var start_x = this.config.WIDTH / 2.5;
     var start_y = this.config.HEIGHT * 0.1;
-    var radius = this.config.WIDTH*0.2;
+    var radius = this.config.WIDTH*0.4;
     for(var i=0;i<this.config.CARD_COUNT;++i) {
       var angle = ((i % 10) / 10) * 2 * Math.PI;
       var x = Math.cos(angle) * radius + start_x;
@@ -141,7 +109,6 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
   CardViz.prototype.init = function() {
       this.update_sizes();
       this.Deck.reset();
-     
       this.build_formation(this.cylinder_positions());
   };
  
