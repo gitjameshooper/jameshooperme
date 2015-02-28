@@ -33,7 +33,6 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
         initialize: function() {
           $("section").html('');
           $(".video-overlay.darker").fadeOut(2000);
-           
         } 
     });
   var AboutView = Backbone.View.extend({
@@ -65,10 +64,10 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
  
         },
         events:{
-            "click button.getModal": "getModal"
+          "click button.getModal": "getModal"
         },
         getModal: function(){
-             new ModalView();
+          new ModalView();
               
         },
         close: function(){
@@ -90,11 +89,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
           this.remove();
         },
         events:{
-            "click span.getModal": "getModal"
-        },
-        getModal: function(){
-             new ModalView();
-              
+          "click #email-btn": "sendEmail"
         },
         sendEmail: function(){
           $("#contact-form").submit(function(e){
@@ -140,56 +135,15 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
           close: function(){
             this.remove();
           }
-
   });
    
-  var MediaView = Backbone.View.extend({
-          tagName: 'div',
-          id: 'media',
-           
-          initialize: function(){
-             
-              this.render();
-          },
-
-          render: function(){
-           
-            $('.viewport').append(this.$el);
-            window.console.log(this.collection);
-
-              
-          }
-  });
- 
-  var MediaModel = Backbone.Model.extend({
-          defaults :{
-            "id": "",
-            "imgSrc": "",
-            "url": ""
-          },
-          initialize: function(){
-             
-          }
-  });
-
-  var MediaCollection = Backbone.Collection.extend({
-        model: MediaModel
-    });
-
-    var song1 = new MediaModel({ id: "wafresh", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
-    var song2 = new MediaModel({ id: "wajim", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
-    var song3 = new MediaModel({ id: "wafsh", imgSrc: "wafresh.jpg", url: "http://www.wafresh.com.au/" });
-    var albumCollection = new MediaCollection([ song1, song2, song3]);
-    
-     
-
   var PageRouter = Backbone.Router.extend({
         routes: {
-            "home": "homeRoute",
-            "about": "aboutRoute",
-            "portfolio": "portfolioRoute",
-            "contact": "contactRoute",
-            "*actions": "homeRoute",
+          "home": "homeRoute",
+          "about": "aboutRoute",
+          "portfolio": "portfolioRoute",
+          "contact": "contactRoute",
+          "*actions": "homeRoute",
         },
         homeRoute : function() {
           this.loadView(new HomeView());
@@ -214,10 +168,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
     var pageRouter = new PageRouter;
  
     Backbone.history.start();
-
-  
-    
-  
+ 
 });
 
  
