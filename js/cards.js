@@ -1,25 +1,9 @@
-define(["jquery","snabbt"], function($, snabbt)
+define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
 {
-  
-  var imgdata = [
-       'img/websites/ahha.jpg',
-       'img/websites/caravan.jpg',
-        'img/websites/construction.jpg',
-        'img/websites/english.jpg',
-        'img/websites/fudge.jpg',
-        'img/websites/totelcom.jpg',
-        'img/websites/wafresh.jpg',
-        'img/websites/desires.jpg',
-        'img/websites/dlprint.jpg',
-        'img/websites/greensplus.jpg',
-        'img/websites/halosleep.jpg',
-        'img/websites/holycross.jpg',
-        'img/websites/threeby.jpg',
-        'img/websites/turtle.jpg',
-        'img/websites/wildseed.jpg'
-         
-  ];
-  function Deck(imgdata){
+   
+   
+  function Deck(cardData){
+
     this.cards = [];
     this.card_index = [];
     this.$container = $('#surface');
@@ -29,11 +13,12 @@ define(["jquery","snabbt"], function($, snabbt)
        
       var card = document.createElement('div');
       var imgEl = document.createElement('img');
+      var aHref = document.createElement('a');
       card.className = 'card';
-      card.style.background = 'red';
-       
-      imgEl.setAttribute('src',imgdata[index]);
-      card.appendChild(imgEl);
+      aHref.setAttribute('href',cardData.cards[index].link);
+      imgEl.setAttribute('src',cardData.cards[index].imgUrl);
+      aHref.appendChild(imgEl);
+      card.appendChild(aHref);
         
       this.$container.append(card);
 
@@ -53,7 +38,7 @@ define(["jquery","snabbt"], function($, snabbt)
     this.reset = function() {
       this.card_index = 0;
     };
-    for(var i=0;i<30;++i) {
+    for(var i=0;i<cardData.cards.length;++i) {
       
       this.cards.push(this.create_card(i));
     }
@@ -62,11 +47,11 @@ define(["jquery","snabbt"], function($, snabbt)
   
  
   function CardViz(){
-    this.Deck = new Deck(imgdata);
+    this.Deck = new Deck(cardData);
     this.config = {
         CARD_HEIGHT : 125,
         CARD_WIDTH : 300,
-        CARD_COUNT : 30,
+        CARD_COUNT : cardData.cards.length,
         WIDTH : 500,
         HEIGHT : 500, 
     }
@@ -97,40 +82,42 @@ define(["jquery","snabbt"], function($, snabbt)
         position: positions[i].position,
         rotation: positions[i].rotation,
         easing: 'ease',
-        delay: i * 100
+        delay: i * 75
       });
     }
   };
    
   CardViz.prototype.rotate_container = function() {
     var container = document.getElementById('surface');
-    var it = snabbt(container, {
+    snabbt(container, {
       rotation: [0, 2*Math.PI, 0],
-      duration: 20000,
+      duration: 8000,
       perspective: 2000,
       loop: Infinity
     });
+    $('.card').hover(function(){
+      snabbt(container, 'stop');
+      snabbt(container, {
+        rotation: [0, 2*Math.PI, 0],
+        duration: 30000,
+        perspective: 2000,
+        loop: Infinity
+      });
+    },function(){
+       snabbt(container, 'stop');
+        snabbt(container, {
+          rotation: [0, 2*Math.PI, 0],
+          duration: 8000,
+          perspective: 2000,
+          loop: Infinity
+        });
+
+    });
+     
     
      
   };
-  CardViz.prototype.pile_positions = function() {
-     this.Deck.reset();
-      var positions = [];
-
-      var i = 0;
-      var card = this.Deck.next_card();
-      var center = (this.config.WIDTH - this.config.CARD_WIDTH)/2;
-      var y = this.config.HEIGHT - this.config.HEIGHT*0.2;
-      while(card) {
-        positions.push({
-          position: [center, y - i*0.5, this.config.WIDTH*0.1],
-          rotation: [Math.PI/2, 0, 0],
-        });
-        ++i;
-        card = this.Deck.next_card();
-      }
-      return positions;
-  };
+   
   CardViz.prototype.cylinder_positions = function() {
     var positions = [];
     var start_x = this.config.WIDTH / 2.2;
@@ -154,7 +141,7 @@ define(["jquery","snabbt"], function($, snabbt)
   CardViz.prototype.init = function() {
       this.update_sizes();
       this.Deck.reset();
-      this.build_formation(this.pile_positions());
+     
       this.build_formation(this.cylinder_positions());
   };
  

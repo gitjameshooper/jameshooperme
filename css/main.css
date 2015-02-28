@@ -221,10 +221,11 @@ footer{
 footer p{
 	position: absolute;
 	bottom: 30px;
-	font-size: 1.2em;
-	color: #666;
+	font-size: 1.4em;
 	left: 20px;
-	text-shadow: 2px 2px 5px #000;
+	color: #999;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	letter-spacing: 2px;
 }
 footer ul.icons{
 	position: absolute;
@@ -470,7 +471,8 @@ textarea{
 .card {
 	position: absolute;
 	display: block;
-
+ 
+	background: #000;
 	border-radius: 5%;
 	/* Fix jagged edges in firefox */
 	outline: 1px solid transparent;

@@ -1,9 +1,10 @@
-require({
+require.config({
     paths: {
         templates:      '../templates',
         Handlebars:     'handlebars',
         text:           'text',
-        hbars:          'hbars'
+        hbars:          'hbars',
+        json :          'json'
     },
     shim: {
         Handlebars: {
@@ -21,8 +22,8 @@ require({
         }
         return content;
     }
-
-},['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact", "hbars!templates/modal"], 
+});
+require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact", "hbars!templates/modal"], 
   function($, _, Backbone, Modernizer, Cards, aboutTemp, portfolioTemp, contactTemp, modalTemp)
 {
 
