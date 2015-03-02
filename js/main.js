@@ -130,7 +130,11 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
             cards.init();
           },
           events :{
-            "click .close-modal": "close"
+            "click .close-modal": "close",
+            "click .card": "openCard"
+          },
+          openCard: function(){
+            $('.openCard').fadeIn('fast');
           },
           close: function(){
             this.remove();

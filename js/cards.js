@@ -77,7 +77,7 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
      
     snabbt(this.$SURFACE, {
       rotation: [0, 2*Math.PI, 0],
-      duration: 8000,
+      duration: 30000,
       perspective: 2000,
       loop: Infinity
     });
