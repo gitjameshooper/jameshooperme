@@ -126,18 +126,20 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
           render: function(){
              
             $('body').prepend(this.$el.html(modalTemp));
-            var cards = new Cards;
-            cards.init();
+            this.$el.fadeIn(2000, function(){
+                var cards = new Cards;
+                cards.init();
+            });
+            
           },
           events :{
-            "click .close-modal": "close",
-            "click .card": "openCard"
-          },
-          openCard: function(){
-            $('.openCard').fadeIn('fast');
+            "click .close-modal": "close"
           },
           close: function(){
-            this.remove();
+            this.$el.fadeOut(1000, function(){
+              this.remove();
+            });
+            
           }
   });
    
