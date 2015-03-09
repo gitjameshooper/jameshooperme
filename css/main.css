@@ -174,7 +174,9 @@ ul a{
 	-ms-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
 	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 }
- 
+span.mobile-toggle{
+ 	display: none;
+}
 header {
 	position: absolute;
 	z-index: 3;
@@ -532,5 +534,55 @@ textarea{
 }
     
 @media screen and (max-width: 800px){
-	
+	body{
+		font-size: 8px;
+	}
+	header {
+		position: absolute;
+		z-index: 3;
+		width: 100%;
+		min-height: 0;
+  		height: 12%;
+		background: #191616;
+		box-shadow: 0px 5px 10px #000;
+	}
+	.headline {
+  		position: absolute;
+  		top: 5%;
+	}
+	span.mobile-toggle {
+		font-size: 3.5em;
+		position: absolute;
+		right: 3%;
+		top: 12%;
+		display: block;
+		  padding: 1.5%;
+	}
+	ul.nav{
+		display: none;
+	}
+	section {
+		position: absolute;
+		z-index: 3;
+		width: 100%;
+		right: 0;
+		top: 17%;
+		margin: 0;
+		padding: 0 5%;
+	}
+	.video-wrapper {
+  		overflow: visible;
+	}
+	video{
+		margin-top:2%;
+	}
+	footer {
+		position: absolute;
+		bottom: -10%;
+		z-index: 2;
+		width: 100%;
+		background: #191616;
+		height: 80px;
+		box-shadow: 0px -5px 10px #000;
+	}
 }
