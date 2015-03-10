@@ -226,6 +226,9 @@ footer{
 	background-position: bottom left;
 	height: 100%;
 }
+footer.mobile{
+	display: none;
+}
 footer .footer-wrapper{
 	position: absolute;
   	bottom: 4%;
@@ -304,18 +307,18 @@ footer ul a i.fa-github:hover {
 video{
 	margin-top: -5%;
 }
-.video-overlay{
+.dot-overlay{
 	width: 100%;
 	height: 100%;
 	background: url('../img/dot.png') repeat;
 	position: absolute;
 	z-index: 1;
 }
-.video-overlay.darker{
+.dot-overlay.darker{
 	display: none;
 	background-position: 0px -2px;
 }
-.video-overlay.darker.next{
+.dot-overlay.darker.next{
 	 
 	background-position: 2px -2px;
 }
@@ -349,16 +352,6 @@ video{
 }
 .getModal:hover{
   background: #111;
-}
-
-.openCard{
-	height: 100%;
-	display: none;
-	position: absolute;
-	left: 0;
-	width: 200px;
-	background: #242624;
-color: #000;
 }
 
  
@@ -502,8 +495,7 @@ textarea{
 	width: 700px;
     height: 400px;
 	margin: auto;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
+ 
 }
 #surface {
 	margin: auto;
@@ -532,57 +524,245 @@ textarea{
     -ms-filter: "FlipH";
     filter: FlipH;
 }
-    
-@media screen and (max-width: 800px){
+
+@media screen and (max-width : 1024px), screen and (max-height: 0px){
+ 
+} 
+@media screen and (max-width: 768px){
+	html{
+		min-height: 0;
+		overflow: hidden;
+	}
 	body{
 		font-size: 8px;
+		background:  url('../img/mobile-bg.png') no-repeat;        
+		min-height: 0;
+		background-position: left center;
 	}
+	 
 	header {
 		position: absolute;
-		z-index: 3;
+		z-index: 4;
 		width: 100%;
 		min-height: 0;
-  		height: 12%;
+  		height: 70px;
 		background: #191616;
 		box-shadow: 0px 5px 10px #000;
 	}
 	.headline {
   		position: absolute;
-  		top: 5%;
+	  top: 10px;
+	  left: 15px;
+	}
+	header h1 {
+	  font-size: 4em;
+	  font-weight: 400;
+	  text-shadow: 2px 2px 2px #000;
+	  letter-spacing: 7px;
+	  font-family: 'Josefin Sans', sans-serif;
+	}
+	h3.tagline {
+	  font-size: 1.32em;
+	  letter-spacing: 1.25px;
+	  margin-top: 6px;
+	  text-transform: uppercase;
+	  text-shadow: 2px 2px 2px #000;
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-weight: 400;
 	}
 	span.mobile-toggle {
-		font-size: 3.5em;
-		position: absolute;
-		right: 3%;
-		top: 12%;
-		display: block;
-		  padding: 1.5%;
+		  font-size: 3.5em;
+	  position: absolute;
+	  right: 15px;
+	  top: 15px;
+	  display: block;
+	  padding: 8px;
+	  cursor: pointer;
 	}
-	ul.nav{
+	.roll-link {
+		display: inline-block;
+		overflow: hidden;
+		-webkit-perspective: 0px;
+		-moz-perspective: 0px;
+		-ms-perspective: 0px;
+		perspective: 0px;
+		-webkit-perspective-origin: 0% 0%;
+		-moz-perspective-origin: 0% 0%;
+		-ms-perspective-origin: 0% 0%;
+		perspective-origin: 0% 0%;
+	}
+
+	.roll-link a {
+		display: block;
+		position: relative;
+		padding: 12px 10px;
+		text-shadow: 2px 2px 5px #000;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		transition: none;
+		-webkit-transform-origin: 50% 50% 0%;
+		-moz-transform-origin: 50% 50% 0%;
+		-ms-transform-origin: 50% 50% 0%;
+		transform-origin: 50% 50% 0%;
+		-webkit-transform-style: flat;
+		-moz-transform-style: flat;
+		-ms-transform-style: flat;
+		transform-style: flat;
+	}
+
+	.roll-link a:after {
+		content:  "";
 		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 0 2px;
+
+		-webkit-transform-origin: 50% 50% 0%;
+		-moz-transform-origin: 50% 50% 0%;
+		-ms-transform-origin: 50% 50% 0%;
+		transform-origin: 50% 50% 0%;
+
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+
+	}
+
+	.roll-link:hover a {
+
+		color:#ede4e4;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+	.rotate {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		-ms-transform: none;
+	}
+	ul.nav {
+		display: none;
+		position: relative;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		font-size: 2em;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		background: #333;
+		top: 70px;
+		border-bottom: 3px solid #191616;
+		box-shadow: inset 0px 5px 10px #000;
+		padding-top: 10px;
+	}
+	ul.nav li {
+		float: none;
+		display: inline-block;
+		padding: 0;
+		width: 100%;
 	}
 	section {
-		position: absolute;
+		position: relative;
+  z-index: 3;
+  width: 100%;
+  right: 0;
+  top: 90px;
+  margin: 0;
+  padding: 0 5%;
+  overflow: hidden;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -75px;
+
+	}
+	 #modal{
+	 	overflow: hidden;
+	 }
+	.video-wrapper {
+		display: none;
+	}
+	 
+
+	footer{
+		display: none;
+	}
+	footer.mobile {
+		display: block;
+		position: relative;
+		bottom: 0;
 		z-index: 3;
 		width: 100%;
-		right: 0;
-		top: 17%;
-		margin: 0;
-		padding: 0 5%;
-	}
-	.video-wrapper {
-  		overflow: visible;
-	}
-	video{
-		margin-top:2%;
-	}
-	footer {
-		position: absolute;
-		bottom: -10%;
-		z-index: 2;
-		width: 100%;
 		background: #191616;
-		height: 80px;
+		height: 75px;
 		box-shadow: 0px -5px 10px #000;
+		overflow: hidden;
+	}
+	footer .footer-wrapper {
+		position: absolute;
+		bottom: 0px;
+		left: 15px;
+		margin-left: -5px;
+	}
+	footer ul.icons {
+		font-size: 1.4em;
+		width: 300px;
+	}
+	footer ul.icons li {
+		display: inline-block;
+		margin: 0 10px;
+		border: 1px solid #ede4e4;
+		width: 30px;
+	}
+	footer ul.icons li:first-child {
+		margin: 0 5px;
+	}
+	footer p {
+		font-size: 1.2em;
+		color: #ede4e4;
+		font-family: 'Josefin Sans', sans-serif;
+		letter-spacing: 1px;
+		margin-top: 15px;
+		margin-left: 4px;
+		margin-bottom: 10px;
+	}
+
+	/* Portfolio */
+	ul.mobile-project{
+		width: 100%;
+		  padding: 75px 7% 5%;
+		  overflow: scroll;
+		  height: 100%;
+
+	}
+	ul.mobile-project li {
+		float: left;
+		width: 45%;
+		margin: 2.5%;
+	}
+	ul.mobile-project img{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 450px){
+	.my-pic {
+		width: 30%;
+		float: none;
+		margin-right: 20px;
+		min-width: 150px;
+		margin: 0 auto;
+		display: block;
+	}
+	#contact-form {
+	  float: left;
+	  width: 100%;
+	  clear: both;
 	}
 }

@@ -23,23 +23,37 @@ require.config({
         return content;
     }
 });
-require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact", "hbars!templates/modal"], 
-  function($, _, Backbone, Modernizer, Cards, aboutTemp, portfolioTemp, contactTemp, modalTemp)
+require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData.json", "hbars!templates/about", "hbars!templates/portfolio", "hbars!templates/contact", "hbars!templates/modal", "hbars!templates/modal-mobile"], 
+  function($, _, Backbone, Modernizer, Cards, cardData, aboutTemp, portfolioTemp, contactTemp, modalTemp, modalMobileTemp)
 {
+
+
+  $('.mobile-toggle').on('click',function(){
+      $('ul.nav').slideToggle(500);
+       
+  });
+  // $('ul.nav li a').on('click',function(){
+  //     $('ul.nav').slideToggle(500);
+       
+  // });
+   
 
   var HomeView = Backbone.View.extend({
         tagName: 'article',
         id: 'home',
         initialize: function() {
           $("section").html('');
-          $(".video-overlay.darker").fadeOut(2000);
-        } 
+          $(".dot-overlay.darker").fadeOut(2000);
+        },
+        close: function(){
+          this.remove();
+        }
     });
   var AboutView = Backbone.View.extend({
         tagName: 'article',
         id: 'about',
         initialize: function() {
-          $(".video-overlay.darker").fadeIn(2000);
+          $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
@@ -55,7 +69,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
         tagName: 'article',
         id: 'portfolio',
         initialize: function() {
-          $(".video-overlay.darker").fadeIn(2000);
+          $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
@@ -66,8 +80,21 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
         events:{
           "click button.getModal": "getModal"
         },
+        checkWidth: function(){
+            var docWidth = $(document).width();
+            if(docWidth > 768){
+              return true;
+            }
+            return false;
+        },
         getModal: function(){
-          new ModalView();
+          
+          if(this.checkWidth()){
+            new ModalView();
+            return;
+          }
+         
+          new ModalMobileView();
               
         },
         close: function(){
@@ -78,7 +105,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
         tagName: 'article',
         id: 'contact',
         initialize: function() {
-          $(".video-overlay.darker").fadeIn(2000);
+          $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
           this.render();
         },
@@ -129,6 +156,31 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "hbars!templat
             this.$el.fadeIn(2000, function(){
                 var cards = new Cards;
                 cards.init();
+            });
+            
+          },
+          events :{
+            "click .close-modal": "close"
+          },
+          close: function(){
+            this.$el.fadeOut(1000, function(){
+              this.remove();
+            });
+            
+          }
+  });
+  var ModalMobileView = Backbone.View.extend({
+          tagName: 'div',
+          id: 'modal',
+
+          initialize: function(){
+            this.render();
+          },
+          render: function(){
+              
+            $('body').prepend(this.$el.html(modalMobileTemp(cardData)));
+            this.$el.fadeIn(2000, function(){
+                
             });
             
           },

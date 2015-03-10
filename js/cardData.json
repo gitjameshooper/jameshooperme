@@ -2,7 +2,7 @@
     "cards" :[
       
     {
-     "imgUrl" :"img/websites/caravan.jpg",
+     "imgUrl" :"img/websites/caravan.png",
      "link" :"http://www.caravancollection.com/"
     },
     {
@@ -10,7 +10,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/construction.jpg",
+     "imgUrl" :"img/websites/construction.png",
      "link" :"http://constructionzone.co/"
     },
     {
@@ -18,7 +18,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/desires.jpg",
+     "imgUrl" :"img/websites/desires.png",
      "link" :"http://desiressexshop.com/"
     },
     {
@@ -26,7 +26,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/dlprint.jpg",
+     "imgUrl" :"img/websites/dlprint.png",
      "link" :"http://www.dlprint.com/"
     },
     {
@@ -34,7 +34,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/english.jpg",
+     "imgUrl" :"img/websites/english.png",
      "link" :"http://englishtelephonebooths.com/"
     },
     {
@@ -48,7 +48,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/fudge.jpg",
+     "imgUrl" :"img/websites/fudge.png",
      "link" :"http://www.fbgfudge.com/"
     },
      {
@@ -56,7 +56,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/halosleep.jpg",
+     "imgUrl" :"img/websites/halosleep.png",
      "link" :"https://www.halosleep.com/"
     },
     {
@@ -64,7 +64,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/greensplus.jpg",
+     "imgUrl" :"img/websites/greensplus.png",
      "link" :"http://www.greensplus.com/categories"
     },
     {
@@ -72,7 +72,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/holycross.jpg",
+     "imgUrl" :"img/websites/holycross.png",
      "link" :"http://holycrossdepot.com/"
     },
     {
@@ -80,13 +80,13 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/onestorytall.jpg",
+     "imgUrl" :"img/websites/onestorytall.png",
      "link" :"http://www.onestorytall.com"
     },
 
 
     {
-     "imgUrl" :"img/websites/threeby.jpg",
+     "imgUrl" :"img/websites/threeby.png",
      "link" :"http://www.threebythree.com/"
     },
     {
@@ -94,7 +94,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/turtle.jpg",
+     "imgUrl" :"img/websites/turtle.png",
      "link" :"http://theturtlerestaurant.com/"
     },
     {
@@ -102,7 +102,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/wildseed.jpg",
+     "imgUrl" :"img/websites/wildseed.png",
      "link" :"http://www.wildseedfarms.com"
     },
     {
@@ -110,11 +110,11 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/wafresh.jpg",
+     "imgUrl" :"img/websites/wafresh.png",
      "link" :"http://www.wafresh.com.au/"
     },
     {
-     "imgUrl" :"img/websites/totelcom.jpg",
+     "imgUrl" :"img/websites/totelcom.png",
      "link" :"http://totelcom.net/"
     },
     {
@@ -122,7 +122,7 @@
      "link" :"http://www.google.com"
     },
     {
-     "imgUrl" :"img/websites/concrete.jpg",
+     "imgUrl" :"img/websites/concrete.png",
      "link" :"http://www.jhooperdesign.com/portfolio/concrete"
     }
     ]
