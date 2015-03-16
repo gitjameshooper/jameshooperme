@@ -27,38 +27,45 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   function($, _, Backbone, Modernizer, Cards, cardData, aboutTemp, portfolioTemp, contactTemp, modalTemp, modalMobileTemp)
 {
 
-
   
   
+  $('.toggle').on('click',function(){
+      $('ul.nav').slideToggle(500);
+       
+  });
+  var toggleLinks = function(){
+    $('ul.nav').slideToggle(500);
+  }
   function selectView(){
-      var vWidth = $(window).width();
+      var vWidth = $(window).width(),
+          $body = $('body');
+     
       if(vWidth > 1024){
-        $('body').removeClass('tv');
-        $('body').removeClass('mv');
-        $('body').addClass('dv');
-      }else if(vWidth >= 768){
-        $('body').removeClass('mv');
-        $('body').removeClass('dv');
-        $('body').addClass('tv');
+        $body.removeClass('mv');
+        $body.addClass('dv');
       }else{
-        $('body').removeClass('tv');
-        $('body').removeClass('dv');
-        $('body').addClass('mv');
+        $body.removeClass('dv');
+        $body.addClass('mv');
      }
+     toggleIt();
+  }
+  function toggleIt(){
+    var $navLinks = $('ul.nav li a');
+    if($('body').hasClass('dv')){
+      $navLinks.off('click',toggleLinks);
+    }else{
+      $navLinks.off('click',toggleLinks).on('click',toggleLinks);
+    }
   }
   selectView();
+  
   $(window).resize(function(){
      selectView();
   });
 
-  $('.mv .toggle').on('click',function(){
-      $('ul.nav').slideToggle(500);
-       
-  });
-  $('.mv ul.nav li a').on('click',function(){
-      $('ul.nav').slideToggle(500);
-       
-  });
+  
+
+  
    
 
   var HomeView = Backbone.View.extend({
@@ -105,7 +112,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
         },
         checkWidth: function(){
             var docWidth = $(document).width();
-            if(docWidth > 768){
+            if(docWidth > 767){
               return true;
             }
             return false;
@@ -250,6 +257,9 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
     var pageRouter = new PageRouter;
  
     Backbone.history.start();
+
+
+    $('body').fadeIn(0);
  
 });
 
