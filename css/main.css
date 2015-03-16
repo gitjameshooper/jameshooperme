@@ -50,8 +50,8 @@ html, body{
 	color: #dde7df;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	height: 100%;
-	background: #191616;
-	min-height: 400px;
+	background: url('../img/body-bg.png') repeat;
+	min-height: 500px;
 }
 
  
@@ -114,6 +114,9 @@ ul a{
 	padding: 0 2px;
 	font-weight: 300;
 }
+.dv ul.nav  {
+	display: block !important;
+}
 .roll-link {
 	display: inline-block;
 	overflow: hidden;
@@ -174,7 +177,7 @@ ul a{
 	-ms-transform: translate3d( 0px,  105%, 0px ) rotateX( -90deg );
 	transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 }
-span.mobile-toggle{
+.dv span.toggle{
  	display: none;
 }
 header {
@@ -199,7 +202,7 @@ section{
   	z-index: 3;
   	width: 45%;
   	right: 0;
-  	top: 17%;
+  	top: 110px;
   	margin-right: 20%;
 }
 section p{
@@ -308,6 +311,7 @@ video{
 	margin-top: -5%;
 }
 .dot-overlay{
+	display: block;
 	width: 100%;
 	height: 100%;
 	background: url('../img/dot.png') repeat;
@@ -323,6 +327,9 @@ video{
 	background-position: 2px -2px;
 }
  
+.dv .dot-overlay.body-bg{
+		display: none !important;
+}
 
 /* About */
 
@@ -348,6 +355,7 @@ video{
 	  box-shadow: 2px 2px 5px #000;
 	  -webkit-transition: all 1s ease;
   	 transition: all 1s ease;
+  	 float: right;
 
 }
 .getModal:hover{
@@ -507,11 +515,18 @@ textarea{
 }
 .card {
 	position: absolute;
-	display: block;
+	display: none;
 	background: #000;
 	border-radius: 5%;
+	opacity: .85;
 	/* Fix jagged edges in firefox */
-	outline: 1px solid transparent;  
+	outline: 1px solid transparent;
+	-webkit-transition: all 500ms ease;
+  	 transition: all 500ms ease;  
+}
+.card:hover{
+	opacity: 1;
+
 }
 .card img{
 	width: 100%;
@@ -524,11 +539,15 @@ textarea{
     -ms-filter: "FlipH";
     filter: FlipH;
 }
-
-@media screen and (max-width : 1024px), screen and (max-height: 0px){
+/* Tablet View */
+@media screen and (max-width : 1024px){
  
+	.tv .dot-overlay.body-bg{
+		display: none !important;
+	}
 } 
-@media screen and (max-width: 768px){
+/* Mobile View */
+@media screen and (max-width: 767px){
 	html{
 		min-height: 0;
 		overflow: hidden;
@@ -539,7 +558,12 @@ textarea{
 		min-height: 0;
 		background-position: left center;
 	}
-	 
+	.dot-overlay.mobile{
+		display: block;
+	}
+	.dot-overlay.mobile.darker{
+		display: none;
+	}
 	header {
 		position: absolute;
 		z-index: 4;
@@ -570,7 +594,7 @@ textarea{
 	  font-family: 'Josefin Sans', sans-serif;
 	  font-weight: 400;
 	}
-	span.mobile-toggle {
+	span.toggle {
 		  font-size: 3.5em;
 	  position: absolute;
 	  right: 15px;
@@ -677,7 +701,7 @@ textarea{
   padding: 0 5%;
   overflow: hidden;
   min-height: 100%;
-  height: auto !important;
+ 
   height: 100%;
   margin: 0 auto -75px;
 
@@ -737,7 +761,8 @@ textarea{
 	ul.mobile-project{
 		width: 100%;
 		  padding: 75px 7% 5%;
-		  overflow: scroll;
+		  overflow-x: hidden;
+ 		 overflow-y: scroll;
 		  height: 100%;
 
 	}
@@ -766,3 +791,4 @@ textarea{
 	  clear: both;
 	}
 }
+

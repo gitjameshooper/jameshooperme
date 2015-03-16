@@ -63,7 +63,7 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
      this.Deck.reset();
       
     for(i=0;i<positions.length;++i) {
-      snabbt(this.Deck.next_card(), {
+      snabbt(this.Deck.next_card().fadeIn(3000), {
         position: positions[i].position,
         rotation: positions[i].rotation,
         easing: 'ease',

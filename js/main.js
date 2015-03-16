@@ -28,14 +28,37 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
 {
 
 
-  $('.mobile-toggle').on('click',function(){
+  
+  
+  function selectView(){
+      var vWidth = $(window).width();
+      if(vWidth > 1024){
+        $('body').removeClass('tv');
+        $('body').removeClass('mv');
+        $('body').addClass('dv');
+      }else if(vWidth >= 768){
+        $('body').removeClass('mv');
+        $('body').removeClass('dv');
+        $('body').addClass('tv');
+      }else{
+        $('body').removeClass('tv');
+        $('body').removeClass('dv');
+        $('body').addClass('mv');
+     }
+  }
+  selectView();
+  $(window).resize(function(){
+     selectView();
+  });
+
+  $('.mv .toggle').on('click',function(){
       $('ul.nav').slideToggle(500);
        
   });
-  // $('ul.nav li a').on('click',function(){
-  //     $('ul.nav').slideToggle(500);
+  $('.mv ul.nav li a').on('click',function(){
+      $('ul.nav').slideToggle(500);
        
-  // });
+  });
    
 
   var HomeView = Backbone.View.extend({
@@ -156,6 +179,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
             this.$el.fadeIn(2000, function(){
                 var cards = new Cards;
                 cards.init();
+             
             });
             
           },
