@@ -27,7 +27,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   function($, _, Backbone, Modernizer, Cards, cardData, aboutTemp, portfolioTemp, contactTemp, modalTemp, modalMobileTemp)
 {
 
-  
+   
   
   $('.toggle').on('click',function(){
       $('ul.nav').slideToggle(500);
@@ -208,8 +208,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
             this.render();
           },
           render: function(){
-              
-            $('body').prepend(this.$el.html(modalMobileTemp(cardData)));
+            $('body').addClass('overflow').prepend(this.$el.html(modalMobileTemp(cardData)));
             this.$el.fadeIn(2000, function(){
                 
             });
@@ -220,6 +219,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
           },
           close: function(){
             this.$el.fadeOut(1000, function(){
+              $('body').removeClass('overflow');
               this.remove();
             });
             

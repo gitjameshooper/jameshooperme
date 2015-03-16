@@ -35,6 +35,9 @@ body {
     background: url('../img/body-bg.png') repeat;
     min-height: 500px;
 }
+body.overflow{
+    overflow: hidden !important;
+}
 /* Header */
 
 h1 {
@@ -160,7 +163,7 @@ ul a {
     transform: translate3d( 0px, 0px, -20px) rotateX( 90deg);
 }
 .roll-link:hover a {
-    color: #ede4e4;
+    color: #dde7df;
     -webkit-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
     -moz-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
     -ms-transform: translate3d( 0px, 105%, 0px) rotateX( -90deg);
@@ -225,7 +228,7 @@ footer .footer-wrapper {
 }
 footer p {
     font-size: 1.2em;
-    color: #ede4e4;
+    color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 1px;
     margin-top: 20px;
@@ -252,7 +255,7 @@ footer ul a {
 footer ul a i.fa {
     vertical-align: middle;
     display: block;
-    color: #ede4e4;
+    color: #dde7df;
     padding: 4px;
     text-align: center;
     width: 100%;
@@ -261,21 +264,21 @@ footer ul a i.fa {
     
     transition: all 1s ease;
 }
-footer ul a i.fa-facebook:hover {
-    background: #ede4e4;
+.no-touch footer ul a i.fa-facebook:hover {
+    background: #dde7df;
     color: #1B1717;
 }
-footer ul a i.fa-twitter:hover {
+.no-touch footer ul a i.fa-twitter:hover {
     color: #1B1717;
-    background: #ede4e4;
+    background: #dde7df;
 }
-footer ul a i.fa-linkedin:hover {
+.no-touch footer ul a i.fa-linkedin:hover {
     color: #1B1717;
-    background: #ede4e4;
+    background: #dde7df;
 }
-footer ul a i.fa-github:hover {
+.no-touch footer ul a i.fa-github:hover {
     color: #1B1717;
-    background: #ede4e4;
+    background: #dde7df;
 }
 /* Video */
 
@@ -318,7 +321,7 @@ video {
 .getModal {
     background: #1B1717;
     cursor: pointer;
-    color: #ede4e4;
+    color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
     border: none;
     padding: 10px 20px;
@@ -406,7 +409,7 @@ textarea {
     float: right;
     background: #1B1717;
     cursor: pointer;
-    color: #ede4e4;
+    color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
     border: none;
     padding: 10px 20px;
@@ -499,15 +502,14 @@ textarea {
     body {
         font-size: 10px;
         background: url('../img/mobile-bg.png') no-repeat;
-        min-height: 0;
+        min-height: 550px;
         background-position: left center;
     }
-    .dot-overlay.mobile {
+    .dot-overlay {
         display: block;
+        min-height: 550px;
     }
-    .dot-overlay.mobile.darker {
-        display: none;
-    }
+     
     header {
         position: fixed;
         z-index: 4;
@@ -527,6 +529,9 @@ textarea {
 	  font-weight: 400;
 	  letter-spacing: 6px;
 	}
+    h2 {
+        font-size: 3.5em;
+    }
     h3.tagline {
 	  font-size: 1.075em;
 	  letter-spacing: 1px;
@@ -536,7 +541,7 @@ textarea {
         font-size: 3.5em;
         position: absolute;
         right: 15px;
-        top: 15px;
+        top: 10px;
         display: block;
         padding: 8px;
         cursor: pointer;
@@ -588,7 +593,6 @@ textarea {
         transform: none;
     }
     .roll-link:hover a {
-        color: #ede4e4;
         -webkit-transform: none;
         -moz-transform: none;
         -ms-transform: none;
@@ -631,7 +635,7 @@ textarea {
         margin: 0;
         padding: 0 5%;
         overflow: hidden;
-        min-height: 500px;
+        min-height: 0;
         height: 100%;
         margin: 0 auto -75px;
     }
@@ -675,7 +679,7 @@ textarea {
     }
     footer p {
         font-size: 1.2em;
-        color: #ede4e4;
+        color: #dde7df;
         font-family: 'Josefin Sans', sans-serif;
         letter-spacing: 1px;
         margin-top: 15px;
@@ -704,9 +708,9 @@ textarea {
 /* Mobile View */
 
 @media screen and (max-width: 767px) {
-    body {
-        font-size: 8px;
-    }
+     section{
+        font-size: 9px;
+     }
 }
 @media screen and (max-width: 500px) {
     .my-pic {
@@ -723,4 +727,58 @@ textarea {
     .info-box {
 	  width: 100%;
 	}
+     
+}
+@media screen and (max-width: 400px) {
+    body,  .dot-overlay{
+        min-height: 480px;
+    }
+    
+    header {
+      height: 60px;
+    }
+    header h1 {
+      font-size: 2.25em;
+      letter-spacing: 6px;
+    }
+    h3.tagline {
+      font-size: .77em;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+    span.toggle {
+      font-size: 3em;
+      position: absolute;
+      right: 15px;
+      top: 7px;
+      display: block;
+      padding: 8px;
+      cursor: pointer;
+    }
+    ul.nav {
+      top: 60px;
+      font-size: 16px;
+    }
+    section{
+        font-size: 8px;
+        margin: 0 auto -60px;
+
+    }
+    footer ul.icons {
+      font-size: 1em;
+      width: auto;
+      text-align: center;
+    }
+    footer .footer-wrapper {
+      position: relative;
+      top: 15px;
+      left: 0;
+      margin-left: 0px;
+      bottom: 0;
+    }
+    footer p {
+        margin-top: 10px;
+        font-size: 1em;
+        text-align: center;
+    }
 }
