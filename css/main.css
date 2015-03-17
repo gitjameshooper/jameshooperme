@@ -675,7 +675,7 @@ textarea {
         width: 30px;
     }
     footer ul.icons li:first-child {
-        margin: 0 5px;
+      margin: 0 10px 0 5px;
     }
     footer p {
         font-size: 1.2em;
