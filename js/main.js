@@ -183,7 +183,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
           render: function(){
              
             $('body').prepend(this.$el.html(modalTemp));
-            this.$el.fadeIn(2000, function(){
+            this.$el.fadeIn(1000, function(){
                 var cards = new Cards;
                 cards.init();
              

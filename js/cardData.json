@@ -7,7 +7,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/ab.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/ab-large-example"
     },
     {
      "imgUrl" :"img/websites/construction.png",
@@ -15,7 +15,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/af.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/af-challenge-wall-example"
     },
     {
      "imgUrl" :"img/websites/desires.png",
@@ -23,7 +23,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/aero.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/aero-social-now-example/"
     },
     {
      "imgUrl" :"img/websites/dlprint.png",
@@ -31,7 +31,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/ibm.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/ibm-smarter-example"
     },
     {
      "imgUrl" :"img/websites/english.png",
@@ -39,7 +39,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/guess.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/guess-dare-example"
     },
     
 
@@ -53,7 +53,7 @@
     },
      {
      "imgUrl" :"img/websites/logos/itv.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/itv-goalface-example"
     },
     {
      "imgUrl" :"img/websites/halosleep.png",
@@ -61,7 +61,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/lasenza.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/la-senza-beach-example"
     },
     {
      "imgUrl" :"img/websites/greensplus.png",
@@ -69,7 +69,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/mastercard.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/mastercard-octagon-example"
     },
     {
      "imgUrl" :"img/websites/holycross.png",
@@ -77,7 +77,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/mtv.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/mtv-catfish-example"
     },
     {
      "imgUrl" :"img/websites/onestorytall.png",
@@ -99,7 +99,7 @@
     },
     {
      "imgUrl" :"img/websites/logos/spredfast.png",
-     "link" :"http://www.google.com"
+     "link" :"http://mass-relevance-all-access.massrel.io/social-pulse-example/"
     },
     {
      "imgUrl" :"img/websites/wildseed.png",
@@ -118,12 +118,12 @@
      "link" :"http://totelcom.net/"
     },
     {
-     "imgUrl" :"img/websites/logos/yahoo.png",
-     "link" :"http://www.google.com"
+     "imgUrl" :"img/websites/coatandtails.png",
+     "link" :"http://coatandtails.com/"
     },
     {
-     "imgUrl" :"img/websites/concrete.png",
-     "link" :"http://www.jhooperdesign.com/portfolio/concrete"
+     "imgUrl" :"img/websites/gallery.png",
+     "link" :"http://www.jimhooperme.me/gallery"
     }
     ]
 }

@@ -468,7 +468,6 @@ textarea {
 }
 .card {
     position: absolute;
-    display: none;
     background: #000;
     border-radius: 5%;
     opacity: .85;

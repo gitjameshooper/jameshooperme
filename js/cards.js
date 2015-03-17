@@ -60,32 +60,33 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
   
  
   CardViz.prototype.build_formation = function(positions) {
-     this.Deck.reset();
+      
       
     for(i=0;i<positions.length;++i) {
-      snabbt(this.Deck.next_card().fadeIn(3000), {
+       
+      snabbt(this.Deck.next_card(), {
         position: positions[i].position,
         rotation: positions[i].rotation,
         easing: 'ease',
-        delay: i * 75
-      }); 
+        delay: i * 50
+      });
     }
+     
      
   };
    
   CardViz.prototype.rotate_container = function() {
-     
+    
     snabbt(this.$SURFACE, {
       rotation: [0, 2*Math.PI, 0],
       duration: 30000,
       perspective: 2000,
       loop: Infinity
+       
     });
-    this.$SURFACE.hover(function(){
-      snabbt(this.$SURFACE, 'stop');
-    });
+
   };
-  
+   
   CardViz.prototype.cylinder_positions = function() {
     var positions = [];
     var start_x = this.config.WIDTH / 2.5;
@@ -96,19 +97,20 @@ define(["jquery","snabbt", "json!cardData.json"], function($, snabbt, cardData)
       var x = Math.cos(angle) * radius + start_x;
       var z = Math.sin(angle) * radius;
       var y = Math.floor(i / 10) * 1.2 * this.config.CARD_HEIGHT + start_y;
+
       positions.push({
         position: [x, y, z],
         rotation: [0, Math.PI/2 + angle, 0],
       });
     }
-    this.rotate_container();
+    
     return positions;
   };
    
 
   CardViz.prototype.init = function() {
       this.update_sizes();
-      this.Deck.reset();
+      this.rotate_container();
       this.build_formation(this.cylinder_positions());
   };
  
