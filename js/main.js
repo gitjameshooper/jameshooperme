@@ -208,7 +208,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
             this.render();
           },
           render: function(){
-            $('body').addClass('overflow').prepend(this.$el.html(modalMobileTemp(cardData)));
+            $('body').prepend(this.$el.html(modalMobileTemp(cardData)));
             this.$el.fadeIn(2000, function(){
                 
             });
@@ -258,8 +258,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
  
     Backbone.history.start();
 
-
-    $('body').fadeIn(0);
+ 
  
 });
 

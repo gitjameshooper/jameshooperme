@@ -32,12 +32,12 @@ body {
     color: #dde7df;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     height: 100%;
-    background: url('../img/body-bg.png') repeat;
-    min-height: 500px;
+    background: url('../img/austin-skyline.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
-body.overflow{
-    overflow: hidden !important;
-}
+ 
 /* Header */
 
 h1 {
@@ -55,7 +55,6 @@ h2 {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 300;
     text-transform: capitalize;
-    margin-left: -3px;
 }
 h3.tagline {
     font-size: 1.5em;
@@ -202,6 +201,9 @@ section p {
     text-shadow: 2px 2px 5px #000;
     font-family: 'Josefin Sans', sans-serif;
 }
+article{
+    overflow: hidden;
+}
 .wrapper {
     margin-top: 5%;
 }
@@ -210,16 +212,15 @@ section p {
 footer {
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     background: url('../img/footer-bg.png') no-repeat;
     background-size: contain;
     background-position: bottom left;
+    max-height: 180px;
     height: 100%;
 }
-footer.mobile {
-    display: none;
-}
+ 
 footer .footer-wrapper {
     position: absolute;
     bottom: 4%;
@@ -231,8 +232,7 @@ footer p {
     color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 1px;
-    margin-top: 20px;
-    margin-left: 4px;
+    margin: 20px 0 10px 4px;
 }
 footer ul.icons {
     font-size: 1.2em;
@@ -266,30 +266,24 @@ footer ul a i.fa {
 }
 .no-touch footer ul a i.fa-facebook:hover {
     background: #dde7df;
-    color: #1B1717;
+    color: #0a0909;
 }
 .no-touch footer ul a i.fa-twitter:hover {
-    color: #1B1717;
+    color: #0a0909;
     background: #dde7df;
 }
 .no-touch footer ul a i.fa-linkedin:hover {
-    color: #1B1717;
+    color: #0a0909;
     background: #dde7df;
 }
 .no-touch footer ul a i.fa-github:hover {
-    color: #1B1717;
+    color: #0a0909;
     background: #dde7df;
 }
-/* Video */
+ 
 
-.video-wrapper {
-    position: relative;
-    max-height: 100%;
-    overflow: hidden;
-}
-video {
-    margin-top: -5%;
-}
+ 
+ 
 .dot-overlay {
     display: block;
     width: 100%;
@@ -305,9 +299,7 @@ video {
 .dot-overlay.darker.next {
     background-position: 2px -2px;
 }
-.dv .dot-overlay.body-bg {
-    display: none !important;
-}
+ 
 /* About */
 
 .my-pic {
@@ -318,8 +310,10 @@ video {
 }
 /* Portfolio  */
 
-.getModal {
-    background: #1B1717;
+.getModal, .resume-btn{
+    font-size: 1.4em;
+    background: #0a0909;
+    text-decoration: none;
     cursor: pointer;
     color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
@@ -334,7 +328,7 @@ video {
     transition: all 1s ease;
     float: right;
 }
-.getModal:hover {
+.getModal:hover , .resume-btn:hover{
     background: #111;
 }
 /* Contact */
@@ -380,7 +374,7 @@ form textarea {
 }
 form input[type="text"]:focus,
 form textarea:focus {
-    outline: 1px solid #1B1717;
+    outline: 1px solid #0a0909;
 }
 form textarea {
     width: 100%;
@@ -407,7 +401,7 @@ textarea {
     clear: both;
     display: block;
     float: right;
-    background: #1B1717;
+    background: #0a0909;
     cursor: pointer;
     color: #dde7df;
     font-family: 'Josefin Sans', sans-serif;
@@ -469,7 +463,6 @@ textarea {
 .card {
     position: absolute;
     background: #000;
-    border-radius: 5%;
     opacity: .85;
     /* Fix jagged edges in firefox */
     
@@ -479,6 +472,8 @@ textarea {
 }
 .card:hover {
     opacity: 1;
+    -webkit-box-shadow:  1px 1px 2px rgba(241,241,241,1),-1px 1px 2px rgba(241,241,241,1),1px -1px 2px rgba(241,241,241,1),-1px -1px 2px rgba(241,241,241,1);
+    box-shadow: 1px 1px 2px rgba(241,241,241,1),-1px 1px 2px rgba(241,241,241,1),1px -1px 2px rgba(241,241,241,1),-1px -1px 2px rgba(241,241,241,1);
 }
 .card img {
     width: 100%;
@@ -495,28 +490,22 @@ textarea {
 /* Tablet View */
 
 @media screen and (max-width: 1024px) {
-    html {
-        min-height: 0;
-    }
+    
     body {
         font-size: 10px;
-        background: url('../img/mobile-bg.png') no-repeat;
-        min-height: 550px;
-        background-position: left center;
     }
     .dot-overlay {
         display: block;
-        min-height: 550px;
     }
      
     header {
         position: fixed;
         z-index: 4;
         width: 100%;
-        min-height: 0;
         height: 70px;
+        min-height: 0;
         box-shadow: 0px 5px 10px #000;
-        background: url('../img/body-bg.png') repeat;
+        background: url('../img/gray-bg.png') repeat;
     }
     .headline {
         position: absolute;
@@ -630,30 +619,29 @@ textarea {
         z-index: 3;
         width: 100%;
         right: 0;
-        top: 90px;
+        top: 70px;
         margin: 0;
-        padding: 0 5%;
-        overflow: hidden;
-        min-height: 0;
+        padding: 20px 5% 170px;
+        overflow: auto;
         height: 100%;
-        margin: 0 auto -75px;
+        margin: 0 auto;
+    }
+    section .push{
+        display: block;
+        clear: both;
+        height: 75px;
     }
     #modal {
         overflow: hidden;
     }
-    .video-wrapper {
-        display: none;
-    }
+     
     footer {
-        display: none;
-    }
-    footer.mobile {
         display: block;
-        position: relative;
+        position: absolute;
         bottom: 0;
         z-index: 3;
         width: 100%;
-        background: url('../img/body-bg.png') repeat;
+        background: url('../img/gray-bg.png') repeat;
         height: 75px;
         box-shadow: 0px -5px 10px #000;
         overflow: hidden;
@@ -729,10 +717,7 @@ textarea {
      
 }
 @media screen and (max-width: 400px) {
-    body,  .dot-overlay{
-        min-height: 480px;
-    }
-    
+   
     header {
       height: 60px;
     }
