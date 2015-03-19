@@ -27,7 +27,19 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   function($, _, Backbone, Modernizer, Cards, cardData, aboutTemp, portfolioTemp, contactTemp, modalTemp, modalMobileTemp)
 {
 
-   
+   function msieversion() {
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {      
+            $('html').addClass('ie');
+            $('ul.nav li').removeClass('roll-link');
+        }
+
+   return false;
+  }
+  msieversion();
   
   $('.toggle').on('click',function(){
       $('ul.nav').slideToggle(500);
