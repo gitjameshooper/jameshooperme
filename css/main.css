@@ -27,8 +27,12 @@ table {
 }
 /* Custom Css */
 
-html,
+html{
+    height: 100%;
+    overflow: hidden;
+}
 body {
+    
     color: #dde7df;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     height: 100%;
@@ -37,6 +41,7 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+ 
  
 /* Header */
 
@@ -406,7 +411,14 @@ textarea {
 }
 .email-msg {
     display: none;
+    position: absolute;
+    background: #0a0909;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #dde7df;
+    color: #dde7df;
 }
+
 .email-btn {
     clear: both;
     display: block;
@@ -685,6 +697,11 @@ textarea {
         margin-left: 4px;
         margin-bottom: 10px;
     }
+    .email-msg {
+        width: 320px;
+        left: 50%;
+        margin-left: -160px;
+    }
     /* Portfolio */
     
     ul.mobile-project {
@@ -778,3 +795,4 @@ textarea {
         text-align: center;
     }
 }
+

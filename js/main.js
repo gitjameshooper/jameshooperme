@@ -27,6 +27,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   function($, _, Backbone, Modernizer, Cards, cardData, aboutTemp, portfolioTemp, contactTemp, modalTemp, modalMobileTemp)
 {
 
+  // Other Functions
    function msieversion() {
 
         var ua = window.navigator.userAgent;
@@ -48,6 +49,8 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   var toggleLinks = function(){
     $('ul.nav').slideToggle(500);
   }
+
+
   function selectView(){
       var vWidth = $(window).width(),
           $body = $('body');
@@ -75,11 +78,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
      selectView();
   });
 
-  
-
-  
-   
-
+  // Backbone Views
   var HomeView = Backbone.View.extend({
         tagName: 'article',
         id: 'home',
@@ -238,6 +237,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
           }
   });
    
+  // Backbone Router
   var PageRouter = Backbone.Router.extend({
         routes: {
           "home": "homeRoute",
@@ -269,8 +269,6 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
     var pageRouter = new PageRouter;
  
     Backbone.history.start();
-
- 
  
 });
 
