@@ -81,7 +81,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
   // Backbone Views
   var HomeView = Backbone.View.extend({
         tagName: 'article',
-        id: 'home',
+        id: 'home-page',
         initialize: function() {
           $("section").html('');
           $(".dot-overlay.darker").fadeOut(2000);
@@ -92,7 +92,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
     });
   var AboutView = Backbone.View.extend({
         tagName: 'article',
-        id: 'about',
+        id: 'about-page',
         initialize: function() {
           $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
@@ -108,7 +108,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
    
   var PortfolioView = Backbone.View.extend({
         tagName: 'article',
-        id: 'portfolio',
+        id: 'portfolio-page',
         initialize: function() {
           $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
@@ -144,7 +144,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
     });
   var ContactView = Backbone.View.extend({
         tagName: 'article',
-        id: 'contact',
+        id: 'contact-page',
         initialize: function() {
           $(".dot-overlay.darker").fadeIn(2000);
           $("section").html(this.el).hide().fadeIn(2000);
@@ -157,7 +157,7 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
           this.remove();
         },
         events:{
-          "click #email-btn": "sendEmail"
+          "click .email-btn": "sendEmail"
         },
         sendEmail: function(){
           $("#contact-form").submit(function(e){
