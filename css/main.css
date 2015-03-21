@@ -245,6 +245,9 @@ footer p {
     letter-spacing: 1px;
     margin: 20px 0 10px 4px;
 }
+footer p span{
+    font-family: 'arial', sans-serif;
+}
 footer ul.icons {
     font-size: 1.2em;
     width: 300px;
