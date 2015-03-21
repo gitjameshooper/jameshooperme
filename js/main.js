@@ -159,29 +159,46 @@ require(['jquery',"underscore", "backbone","modernizer", "cards", "json!cardData
         events:{
           "click .email-btn": "sendEmail"
         },
+        checkInputs: function(){
+          var $formName = $.trim($('#form-name').val()),
+              $formEmail = $.trim($('#form-email').val()),
+              $formText = $.trim($('#form-text').val());
+ 
+          if(($formName !== '') && ($formEmail !== '') && ($formText !== '')){
+            return true;
+          }
+  
+        },
         sendEmail: function(){
           $("#contact-form").submit(function(e){
             return false;
           });
-       
-          $.ajax({
-            type: "POST",
-            url: "email.php",
-            data: $('#contact-form').serialize(),
-            success: function(){
-              $('#form-name').val('');
-              $('#form-email').val('');
-              $('#form-text').val('');
-              $('.success').fadeIn(2000 , function(){
-              $('.success').fadeOut(4000);
-              }); 
-            },
-            error: function(){
-              $('.no-success').fadeIn(2000 , function(){
-                   $('.no-success').fadeOut(4000);
-              }); 
-            }
-          });
+          if(this.checkInputs()){
+
+            $.ajax({
+              type: "POST",
+              url: "email.php",
+              data: $('#contact-form').serialize(),
+              success: function(){
+                $('#form-name').val('');
+                $('#form-email').val('');
+                $('#form-text').val('');
+                $('.success').fadeIn(1000 , function(){
+                $('.success').delay(3000).fadeOut(2000);
+                }); 
+              },
+              error: function(){
+                $('.no-success').fadeIn(1000 , function(){
+                     $('.no-success').delay(3000).fadeOut(2000);
+                }); 
+              }
+            });
+          }else{
+            $('.no-input').fadeIn(1000 , function(){
+
+                     $('.no-input').delay(3000).fadeOut(2000);
+                });
+          }
         }
     });
   var ModalView = Backbone.View.extend({
