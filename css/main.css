@@ -690,7 +690,7 @@ textarea {
         color: #dde7df;
         font-family: 'Josefin Sans', sans-serif;
         letter-spacing: 1px;
-        margin-top: 10px 0 10px 4px;
+        margin: 10px 0 10px 4px;
     }
     .email-msg {
         width: 320px;
