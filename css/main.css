@@ -2,10 +2,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* HTML5 display-role reset for older browsers */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 
-body {
-    font-size: 10px;
-    line-height: 1;
-}
 ol,
 ul {
     list-style: none;
@@ -30,9 +26,11 @@ table {
 html{
     height: 100%;
     overflow: hidden;
+    background: #0a0909;
 }
 body {
-    
+    font-size: 10px;
+    line-height: 1;
     color: #dde7df;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     height: 100%;
@@ -86,6 +84,9 @@ ul.nav {
     letter-spacing: 5px;
     text-transform: uppercase;
 }
+.dv ul.nav {
+    display: block;
+}
 ul.nav li {
     float: left;
     display: inline-block;
@@ -117,9 +118,7 @@ ul a {
     
     -ms-transform: rotate(8deg);
 }
-.dv ul.nav {
-    display: block !important;
-}
+
 .roll-link {
     display: inline-block;
     overflow: hidden;
@@ -726,6 +725,11 @@ textarea {
         font-size: 9px;
      }
       
+}
+@media screen and (max-width: 767px) and (orientation: landscape) {
+   .touch footer {
+     display: none;
+   }
 }
 @media screen and (max-width: 500px) {
     .my-pic {
