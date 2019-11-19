@@ -2,24 +2,12 @@
     "cards" :[
       
     {
-     "imgUrl" :"img/websites/caravan.png",
-     "link" :"http://www.caravancollection.com/"
-    },
-    {
      "imgUrl" :"img/websites/logos/ab.png",
      "link" :"http://mass-relevance-all-access.massrel.io/ab-large-example"
     },
     {
-     "imgUrl" :"img/websites/construction.png",
-     "link" :"http://constructionzone.co/"
-    },
-    {
      "imgUrl" :"img/websites/logos/af.png",
      "link" :"http://mass-relevance-all-access.massrel.io/af-challenge-wall-example"
-    },
-    {
-     "imgUrl" :"img/websites/desires.png",
-     "link" :"http://desiressexshop.com/"
     },
     {
      "imgUrl" :"img/websites/logos/aero.png",
@@ -61,12 +49,8 @@
      "link" :"https://www.halosleep.com/"
     },
     {
-     "imgUrl" :"img/websites/appliedtheory.png",
-     "link" :"http://www.shopappliedtheory.com/"
-    },
-    {
      "imgUrl" :"img/websites/greensplus.png",
-     "link" :"http://www.greensplus.com/categories"
+     "link" :"http://www.greensplus.com"
     },
     {
      "imgUrl" :"img/websites/logos/mastercard.png",
@@ -84,12 +68,6 @@
     {
      "imgUrl" :"img/websites/marthaemmanuel.png",
      "link" :"http://marthaemmanuel.com/"
-    },
-
-
-    {
-     "imgUrl" :"img/websites/holycross.png",
-     "link" :"http://holycrossdepot.com/"
     },
     {
      "imgUrl" :"img/websites/logos/oakley.png",
